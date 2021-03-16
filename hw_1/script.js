@@ -11,7 +11,7 @@
 5. Написать программу определения оценки студента по его рейтингу, на основе следующих правил
 
 Рейтинг Оценка
-0-19 F
+0-19 F  Githubiscominggithub
 20-39 E
 40-59 D
 60-74 C
@@ -529,5 +529,5 @@ console.log(getNumber('пятьсот двадцать четыре'));
 console.log(getNumber('двадцать шесть'));
 console.log(getNumber('одиннадцать'));
 console.log(getNumber('три'));
-console.log(getNumber('восемьсот три'));
+console.log(getNumber('восемьсот'));
 console.groupEnd();
