@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Number</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="label"></div>
+
+<div class="part-1">
+    <div class="container" id="1">
+        <div class="open-message">
+            <div class="welcome-message">Hi! Do you want to play? I will pick a number from your range, and you will guess it in 5 attempts! Let's start? 
+            </div>
+            <div class="first-pair">
+                <button class="play btn">Let's play!</button>
+                <button class="cancel btn">No, thank you!</button>    
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="part-2 hidden">
+    <div class="container">
+        <div class="range-field ">
+            <h2 class="choose-range">Choose the interval</h2>
+            <div class="second-pair">
+                    <label for="inputRange">
+                        <div class="input-number">
+
+                        <input type="number" class="min-value" placeholder="1">
+                        
+                        <input type="number" class="max-value" placeholder="200">
+                    </div>
+
+                    </label>                       
+                <button class="guess-btn btn">Guess</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="part-3 hidden">
+    <div class="container">
+        <div class="guess-game ">
+            <div class="tries-message">You have 5 attempts! Good luck🍀
+            </div>
+            <label for="guess">
+                <input id="guess" type="number" class="guess-number" placeholder="?">
+            </label>
+            <button class="generate-btn btn">GENERATE
+            </button>    
+        </div>
+    </div>
+</div>
+
+    <div class="exit">
+        <button class="exit-btn btn">Exit</button>
+    </div>
+</body>
+</html>
+
