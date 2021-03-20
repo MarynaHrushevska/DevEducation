@@ -61,7 +61,6 @@ guessBtn.addEventListener('click', () => {
 	} else {
 		chooseRange.textContent = 'Only integer numbers 😉';
 	}
-	console.log(secretNumber);
 })
 
 // third part 
