@@ -61,48 +61,55 @@ guessBtn.addEventListener('click', () => {
 	} else {
 		chooseRange.textContent = 'Only integer numbers 😉';
 	}
+	console.log(secretNumber);
 })
 
 // third part 
 
 var generateBtn = document.querySelector('.generate-btn');
 var intoMessage = document.querySelector('.tries-message');
-var attempts = 4;
+var attempts = 5;
 var counter = 0;
 var guessInput = document.querySelector('.guess-number');
+var delta = null;
 
 generateBtn.addEventListener('click', () => {
 	var correctAnswer = attempts > 1 ? 'attempts' : 'attempt';
 	var guessNumber = Number(document.querySelector('.guess-number').value);
-	console.log(secretNumber);
+	var currentDelta = Math.abs(secretNumber - guessNumber);
 
 	if (!guessNumber) {
-		message('Any guess?😏')
-	} else if (guessNumber === secretNumber) {
-		message(`Congratulations! You guessed the intended number in ${++counter} attempts`);
+		return message('Any guess?😏');
+	} 
+	if (guessNumber === secretNumber) {
 		generateBtn.disabled = true;
-	} else if (guessNumber > secretNumber) {
-		if (attempts > 0) {
-			message(`Too high, only ${attempts} ${correctAnswer} left 😬`);
-			--attempts;
-			counter++;
-		} else {
-			message('You lose! Try again or come later 👋');
-			generateBtn.disabled = true;
-		}
-	} else if (guessNumber < secretNumber) {
-		if (attempts > 0) {
-			message(`Too low, only ${attempts} ${correctAnswer} left 🙁`);
-			--attempts;
-			counter++;
-		} else {
-			message('You lose! Try again or come later 👋'); 
-			guessInput.value = '';
-			generateBtn.disabled = true;    
+		message(`Congratulations! You guessed number in ${++counter} ${correctAnswer}`);
+		return;
+	} 
+	--attempts;
+	counter++;
 
-		}
+	if (attempts === 0) {
+		message('You lose! Try again or come later 👋'); 
+		guessInput.value = '';
+		generateBtn.disabled = true;  
+		return;  
 	}
-	console.log('click');
+
+	if (counter === 1) {
+		message(`Wrong. ${attempts} ${correctAnswer} left`);
+	} else {
+		if (delta < currentDelta) {
+			message(`Colder. ${attempts} ${correctAnswer} left`);
+		}  
+		if (delta > currentDelta) {
+			message(`Warmer! ${attempts} ${correctAnswer} left`);
+		}
+		if (delta === currentDelta) {
+			message(`Warmer... ${attempts} ${correctAnswer} left`);
+		}
+	} 
+	delta = currentDelta;
 })
 
 // Functions
