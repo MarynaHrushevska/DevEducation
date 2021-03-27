@@ -1,0 +1,156 @@
+$base-color: #12140d;
+$text-color: #fdeecc;
+$exit: #FF784F;
+$button: #DB9D47;
+$button-hover: #8d6834;
+$button-focus: rgb(128, 0, 128);
+
+$input-field: #FFF;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+body {
+    background-color: $base-color;
+}
+.hidden {
+    display: none;
+}
+.number-field {
+    background-color: $input-field;
+}
+.logo {
+    display: inline-block;
+    position: relative;
+    left: 1%;
+    top: 50px;
+    width: 100%;
+    height: 210px;
+    margin: 15px auto;
+    background: url('label.png') no-repeat;
+}
+.container {
+    padding: 30px 20px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+}
+.button {
+    width: 250px;
+    height: 60px;
+    font-size: 2em;
+    border-radius: 5px;
+    background-color: $button;
+    &:focus {
+        outline: none;
+    }
+    &:hover {
+        background-color: #db9d477c;
+        box-shadow: 3px 3px 8px $input-field;
+    }
+    &:disabled {
+        pointer-events: none;
+        background-color: #db9d477c;
+    }
+}
+.number-field {
+    margin: 30px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-size: 2em;
+    &:focus {
+        outline: 3px solid $button-focus;
+    }
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+}
+
+/* open-message */
+.group-block {
+    &__text {
+        width: 700px;
+        height: 200px;
+        background-color: $text-color;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        font-size: 1.75em;
+        text-align: center;
+        line-height: 2;
+        border-radius:  10px;
+    }
+    &__buttons {
+        margin-top: 20px ;
+        display: flex;
+        justify-content: space-around;
+    }
+}
+/* interval */
+.screen-two {
+    &__header {
+        margin: 20px ;
+        color: $input-field;
+        font-size: 2em;
+    }
+    &__apply  {
+        margin: 0 43px;
+    }
+}
+.user-numbers{
+    margin: 20px auto ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__group {
+        display: flex;
+        justify-content: space-around;
+        width: 300px;
+        & .number-field:nth-child(2) {
+            border: 2px solid red;
+        }
+    }
+}
+/* third part */
+.screen-three {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__text {
+        color: $input-field;
+        font-size: 2em;
+    }
+}
+.secret-number {
+    margin: 0;
+    width: 100px;
+    height: 100px;
+    color: $input-field;
+    text-align: center;
+    font-size: 4em;
+}
+.exit-game {
+    text-align: center;
+    &__button {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        background-color: $exit;
+        width: 100px;
+        &:hover {
+            background-color: #ff784f7e;
+            box-shadow: 3px 3px 8px #fff;
+        }
+    }
+}

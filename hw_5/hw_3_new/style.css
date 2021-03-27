@@ -1,0 +1,196 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #12140d;
+}
+
+.hidden {
+  display: none;
+}
+
+.number-field {
+  background-color: #FFF;
+}
+
+.logo {
+  display: inline-block;
+  position: relative;
+  left: 1%;
+  top: 50px;
+  width: 100%;
+  height: 210px;
+  margin: 15px auto;
+  background: url("label.png") no-repeat;
+}
+
+.container {
+  padding: 30px 20px;
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.button {
+  width: 250px;
+  height: 60px;
+  font-size: 2em;
+  border-radius: 5px;
+  background-color: #DB9D47;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:hover {
+  background-color: #db9d477c;
+  -webkit-box-shadow: 3px 3px 8px #FFF;
+          box-shadow: 3px 3px 8px #FFF;
+}
+
+.button:disabled {
+  pointer-events: none;
+  background-color: #db9d477c;
+}
+
+.number-field {
+  margin: 30px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  font-size: 2em;
+}
+
+.number-field:focus {
+  outline: 3px solid purple;
+}
+
+.number-field::-webkit-outer-spin-button, .number-field::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* open-message */
+.group-block__text {
+  width: 700px;
+  height: 200px;
+  background-color: #fdeecc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.75em;
+  text-align: center;
+  line-height: 2;
+  border-radius: 10px;
+}
+
+.group-block__buttons {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+/* interval */
+.screen-two__header {
+  margin: 20px;
+  color: #FFF;
+  font-size: 2em;
+}
+
+.screen-two__apply {
+  margin: 0 43px;
+}
+
+.user-numbers {
+  margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-numbers__group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 300px;
+}
+
+.user-numbers__group .number-field:nth-child(2) {
+  border: 2px solid red;
+}
+
+/* third part */
+.screen-three__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.screen-three__text {
+  color: #FFF;
+  font-size: 2em;
+}
+
+.secret-number {
+  margin: 0;
+  width: 100px;
+  height: 100px;
+  color: #FFF;
+  text-align: center;
+  font-size: 4em;
+}
+
+.exit-game {
+  text-align: center;
+}
+
+.exit-game__button {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background-color: #FF784F;
+  width: 100px;
+}
+
+.exit-game__button:hover {
+  background-color: #ff784f7e;
+  -webkit-box-shadow: 3px 3px 8px #fff;
+          box-shadow: 3px 3px 8px #fff;
+}
+/*# sourceMappingURL=style.css.map */

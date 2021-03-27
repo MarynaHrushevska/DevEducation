@@ -1,0 +1,111 @@
+@charset "UTF-8";
+/* GENERAL */
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+/* PAGE */
+body {
+  background-color: #ffecdc;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  padding: 15px;
+  margin: 0 auto;
+  position: relative;
+  top: 15%;
+  width: 700px;
+  text-align: center;
+  background: -webkit-gradient(linear, left top, right bottom, from(red), color-stop(orange), to(yellow));
+  background: linear-gradient(to right bottom, red, orange, yellow);
+}
+
+.container__section {
+  padding: 10px 0;
+}
+
+/* HEADER */
+.header__text {
+  font-size: 2.75em;
+}
+
+/* MIN & MAX */
+.digits {
+  text-align: center;
+  font-size: 1.25em;
+}
+
+.digits:focus {
+  outline: 2px solid red;
+}
+
+.user-numbers__group {
+  margin: 0 0 5px;
+}
+
+.user-numbers__group:last-child .user-numbers__control {
+  border: 2px solid #52e5ff;
+}
+
+.user-numbers__label {
+  font-size: 1.5em;
+}
+
+.user-numbers__control {
+  display: block;
+  margin: 10px auto 0;
+  width: 100px;
+  height: 50px;
+  border: 2px solid #90ff8c;
+}
+
+.user-numbers__control::-webkit-outer-spin-button, .user-numbers__control::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* MESSAGE */
+.message__text {
+  font-size: 1.75em;
+}
+
+/* BUTTONS */
+.button {
+  width: 100px;
+  height: 30px;
+  background: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #f0f0f0;
+  -webkit-box-shadow: 3px 3px 8px white;
+          box-shadow: 3px 3px 8px white;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:disabled {
+  background: #fefefe;
+  pointer-events: none;
+}
+
+/*
+использовать флексы +
+выравнивание по центру +
+каждый второй инпут должен иметь отличающиийся бордер +
+должны быть описаны стили для кнопок disabled +
+hover добавить shadow +
+инпуты в фокусе должны иметь цвет outline +
+*/
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randomizer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header container__section">
+            <h1 class="header__text">RANDOMIZER</h1>
+        </div>
+        <div class="user-numbers container__section">
+            <div class="user-numbers__group">
+                <label for="min" class="user-numbers__label">Min
+                    <input type="number" id="min" class="user-numbers__control digits" min="1">
+                </label>
+            </div>
+            <div class="user-numbers__group">
+                <label for="max" class="user-numbers__label">Max
+                    <input type="number" id="max" class="user-numbers__control digits">
+                </label>
+            </div> 
+        </div>
+        <div class="generate container__section">
+            <button class="generate__button button" id="generate">Generate</button>
+        </div>
+        <div class="message container__section">
+            <p class="message__text" id="message">Choose range</p>
+        </div>
+        <div class="reset container__section">
+            <button class="reset__button button" id="reset">Reset</button>
+        </div>
+    </div>
+</body>
+</html>

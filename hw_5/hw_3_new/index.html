@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Number</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="logo"></div>
+<div class="screen-one" id="screen-one">
+    <div class="container">
+        <div class="screen-one__group group-block" id="screen-one__message">
+            <div class="group-block__text" id="screen-one__message__text">Hi! Do you want to play? I will pick a number from your range, and you will guess it in 5 attempts! Let's start? 
+            </div>
+            <div class="group-block__buttons" id="screen-one__group">
+                <button class="group-block_play button" id="screen-one__group__play">Let's play!</button>
+                <button class="group-block_cancel button" id="screen-one__group__cancel">No, thank you!</button>    
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="screen-two hidden" id="screen-two">
+    <div class="container">
+        <div class="screen-two__container" id="screen-two__container">
+            <h2 class="screen-two__header" id="screen-two__header">Choose the interval</h2>
+            <div class="user-numbers" id="screen-two__group">
+                <label>
+                    <div class="user-numbers__group">
+                        <input type="number" class="user-numbers__min number-field" id="screen-two__min-value" placeholder="1">
+                        <input type="number" class="user-numbers__max number-field" id="screen-two__max-value" placeholder="200">
+                    </div>
+                </label> 
+            </div>
+            <button class="screen-two__apply button" id="screen-two__button">Guess</button>
+        </div>
+    </div>
+</div>
+<div class="screen-three hidden" id="screen-three">
+    <div class="container">
+        <div class="screen-three__container">
+            <div class="screen-three__text" id="screen-three__message">You have 5 attempts! Good luck🍀</div>
+            <label for="guess" id="screen-three__label">
+                <input id="screen-three__guess" type="number" class="number-field" placeholder="?">
+            </label>
+            <button class="screen-three__guess button" id="screen-three__button">GENERATE</button>    
+        </div>
+    </div>
+</div>
+<div class="exit-game">
+    <button class="exit-game__button button" id="exit-btn">Exit</button>
+</div>
+</body>
+</html>
+
