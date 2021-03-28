@@ -461,14 +461,21 @@ function getString(x) {
     if (x <= 19) {
         return `${first[x]}`;
     }
-    if (digits.length === 1) {
-        return `${first[digits[0]]}`
-    } 
     if (digits.length === 2) {
         return `${dozens[digits[0]]} ${first[digits[1]]}`;
     }  
     if (digits.length === 3) {
-        return `${hundreds[digits[0]]} ${dozens[digits[1]]} ${first[digits[2]]}`
+        if (Number(digits[1]) === 0) {
+            return `${hundreds[digits[0]]} ${first[digits[2]]}`
+        }
+        if (Number(digits[1]) === 1) {
+            var firstIndex = Number(digits[1] + digits[2]);
+            console.log(firstIndex);
+            return `${hundreds[digits[0]]} ${first[firstIndex]}`
+        }
+        if (Number(digits[2]) === 0) {
+            return `${hundreds[digits[0]]} ${dozens[digits[1]]}`
+        } 
     }
     return 'Try again';
 }
@@ -476,8 +483,10 @@ console.group('functions. task 3');
 console.log(getString(363));
 console.log(getString(13));
 console.log(getString(19));
-console.log(getString(811)); //неправильно
-console.log(getString(3));
+console.log(getString(810)); 
+console.log(getString(819)); 
+console.log(getString(802)); 
+console.log(getString(830));
 console.groupEnd();
 
 // 4. Вводим строку, которая содержит число, написанное прописью (0-999). Получить само число
