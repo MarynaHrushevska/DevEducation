@@ -470,7 +470,6 @@ function getString(x) {
         }
         if (Number(digits[1]) === 1) {
             var firstIndex = Number(digits[1] + digits[2]);
-            console.log(firstIndex);
             return `${hundreds[digits[0]]} ${first[firstIndex]}`
         }
         if (Number(digits[2]) === 0) {
