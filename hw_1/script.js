@@ -1,17 +1,14 @@
 'use strict';
 /*
 (!) Красным отмечены задания повышенной сложности
- 
 Условные операторы
-
 1. Если а – четное посчитать а*б, иначе а+б
 2. Определить какой четверти принадлежит точка с координатами (х,у)
 3. Найти суммы только положительных из трех чисел
 4. Посчитать выражение (макс(а*б*с, а+б+с))+3
 5. Написать программу определения оценки студента по его рейтингу, на основе следующих правил
-
 Рейтинг Оценка
-0-19 F  Githubiscominggithub
+0-19 F  
 20-39 E
 40-59 D
 60-74 C
@@ -75,7 +72,6 @@ var sumPositiveDigits = function (a, b, c) {
     }
     return sum;
 }
-
 console.group('conditions. task 3'); 
 console.log(sumPositiveDigits(1, 3, 5));
 console.log(sumPositiveDigits(-1, 3, 5));
@@ -91,7 +87,6 @@ console.groupEnd();
 var calcExpression = function (a, b, c) {
     var multiply = (a * b * c); 
     var sum = (a + b + c);
-
     return (multiply > sum) ? (multiply + 3) : (sum + 3);
 } 
 console.group('conditions. task 4');
@@ -205,7 +200,6 @@ var calculateFactorial = function(n) {
     }
     return factorial;
 }
-
 console.group('cycles. task 4');
 console.log(calculateFactorial(9));
 console.log(calculateFactorial(5));
@@ -255,7 +249,6 @@ function mirrorNumber(x) {
     for (var k = 0; k < tempArray.length; k++) {
         result += tempArray[k];
     }
-
     return Number(result);
 }
 console.group('cycles. task 6');
@@ -266,7 +259,6 @@ console.groupEnd();
 
 /*
 Одномерные массивы
-
 1. Найти минимальный элемент массива
 2. Найти максимальный элемент массива
 3. Найти индекс минимального элемента массива
@@ -504,19 +496,16 @@ function getNumber(x) {
 
     for (var i = 0; i < stringArray.length; i++) {
         var number = stringArray[i];
-
         var index = findIndex(hundredsNumber, number);
         if (index !== null) {
             result += index * 100;
             continue;
         }
-
         index = findIndex(dozenNumber, number);
         if (index !== null) {
             result += index * 10;
             continue;
         }
-
         index = findIndex(firstNumber, number);
         if (index !== null) {
             result += index * 1;
