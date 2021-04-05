@@ -450,13 +450,22 @@ function getString(x) {
     ];
 
     var digits = x.toString().split('');
+  
     if (x <= 19) {
         return `${first[x]}`;
     }
     if (digits.length === 2) {
-        return `${dozens[digits[0]]} ${first[digits[1]]}`;
+        if (Number(digits[1]) === 0) {
+            return `${dozens[digits[0]]}`;
+        }
+        if (Number(digits[0]) !== 0 && Number(digits[1]) !== 0) {
+            return `${dozens[digits[0]]} ${first[digits[1]]}`;
+        }
     }  
     if (digits.length === 3) {
+        if (Number(digits[1]) === 0 && Number(digits[2]) === 0) {
+            return `${hundreds[digits[0]]}`
+        }
         if (Number(digits[1]) === 0) {
             return `${hundreds[digits[0]]} ${first[digits[2]]}`
         }
@@ -467,17 +476,21 @@ function getString(x) {
         if (Number(digits[2]) === 0) {
             return `${hundreds[digits[0]]} ${dozens[digits[1]]}`
         } 
+        return `${hundreds[digits[0]]} ${dozens[digits[1]]} ${first[digits[2]]}`;
     }
     return 'Try again';
 }
 console.group('functions. task 3');
-console.log(getString(363));
-console.log(getString(13));
-console.log(getString(19));
-console.log(getString(810)); 
-console.log(getString(819)); 
-console.log(getString(802)); 
-console.log(getString(830));
+console.log(getString(1));
+console.log(getString(12));
+console.log(getString(20));
+console.log(getString(25));
+console.log(getString(100));
+console.log(getString(300));
+console.log(getString(105));
+console.log(getString(115));
+console.log(getString(120));
+console.log(getString(125));
 console.groupEnd();
 
 // 4. Вводим строку, которая содержит число, написанное прописью (0-999). Получить само число
