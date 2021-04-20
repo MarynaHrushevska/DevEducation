@@ -15,20 +15,31 @@ body {
     width: 300px;
     height: 475px;
     border: 1px solid black;
+    overflow: hidden;
     &__screen {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 300px;
+        width: 525px;
         height: 100px;
         margin: 0 auto;
         background-color: #fff;
         font-size: 25px;
+        &-rotate {
+            position: absolute;
+            top: .5%;
+            right: 1%;
+            cursor: pointer;
+            &:hover {
+                transform: rotate(120deg);
+                transition-duration: .8s;
+            }
+        }
     }
     &__panel {
         display: flex;
         flex-wrap: wrap;
-        width: 300px;
+        width: 525px;
         height: 375px;
         &-btn {
             display: flex;
@@ -39,12 +50,15 @@ body {
             background-color: #fff;
             border: 1px solid #ccc;
             cursor: pointer;
-            &:first-child {
-                width: 225px;
-            }
-            &:nth-last-child(3) {
-                width: 150px;
-            }
+        }
+    }
+    &.engineer {
+        width: 525px;
+        background: rgb(240, 240, 240);
+        border: 1px solid #ccc;
+        overflow: visible;
+        &:hover {
+            background: linear-gradient(top, #ccc, #fff);
         }
     }
 }
@@ -78,4 +92,14 @@ body {
             background: linear-gradient(top, #ccc, #fff);
         }
     }
+    &__clear {
+        width: 225px;
+    }
+    // &__engineer {
+    //     background: rgb(240, 240, 240);
+    //     border: 1px solid #ccc;
+    //     &:hover {
+    //         background: linear-gradient(top, #ccc, #fff);
+    //     }
+    // }
 }

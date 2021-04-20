@@ -19,6 +19,7 @@ body {
   width: 300px;
   height: 475px;
   border: 1px solid black;
+  overflow: hidden;
 }
 
 .container__screen {
@@ -31,11 +32,25 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 300px;
+  width: 525px;
   height: 100px;
   margin: 0 auto;
   background-color: #fff;
   font-size: 25px;
+}
+
+.container__screen-rotate {
+  position: absolute;
+  top: .5%;
+  right: 1%;
+  cursor: pointer;
+}
+
+.container__screen-rotate:hover {
+  -webkit-transform: rotate(120deg);
+          transform: rotate(120deg);
+  -webkit-transition-duration: .8s;
+          transition-duration: .8s;
 }
 
 .container__panel {
@@ -44,7 +59,7 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  width: 300px;
+  width: 525px;
   height: 375px;
 }
 
@@ -65,12 +80,16 @@ body {
   cursor: pointer;
 }
 
-.container__panel-btn:first-child {
-  width: 225px;
+.container.engineer {
+  width: 525px;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  overflow: visible;
 }
 
-.container__panel-btn:nth-last-child(3) {
-  width: 150px;
+.container.engineer:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#fff));
+  background: linear-gradient(top, #ccc, #fff);
 }
 
 .panel__symbol {
@@ -112,5 +131,9 @@ body {
 .panel__equal:hover {
   background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#fff));
   background: linear-gradient(top, #ccc, #fff);
+}
+
+.panel__clear {
+  width: 225px;
 }
 /*# sourceMappingURL=style.css.map */
