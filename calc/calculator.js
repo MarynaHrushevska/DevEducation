@@ -40,10 +40,12 @@ Calculator.prototype.handleClick = function(event) {
     var isClear = button.classList.contains('panel__clear');
     var isDot = button.classList.contains('panel__dot');
     var isEqual = button.classList.contains('panel__equal');
+
     if (isDot) {
         this.handleDot();
     }
     if (isDigit) {
+    // console.log(button, 'button', this.screen.textContent, 'ctx', this.screen.textContent.length, 'length', button.textContent, 'btn.ctx');
         if (this.screen.textContent.length > 8) {
             return;
         }
@@ -65,9 +67,12 @@ Calculator.prototype.handleClick = function(event) {
     }
 }
 Calculator.prototype.handleSymbol = function (button) {
+    console.log('bsjhv')
     this.firstArg = this.screen.textContent;
     this.screen.textContent = '';
     this.choosenSymbol = button.textContent;
+    button.classList.add('activeOperator');
+    console.log(button, button.textContent);
 }
 Calculator.prototype.handleDot = function () {
     if (this.screen.textContent.includes('.')) {
@@ -76,17 +81,33 @@ Calculator.prototype.handleDot = function () {
     this.screen.textContent += '.';
     this.screen.textContent = this.screen.textContent;
 }
-Calculator.prototype.calcResult = function () {
+Calculator.prototype.calcResult = function (button) {
     if (this.choosenSymbol === '+') {
         this.screen.textContent = this.operations.sum(this.firstArg, this.secondArg);
+        button.classList.remove('activeOperator');
+
     } 
     if (this.choosenSymbol === '-') {
         this.screen.textContent = this.operations.subtract(this.firstArg, this.secondArg);
+        button.classList.remove('activeOperator');
+
     } 
     if (this.choosenSymbol === 'x') {
         this.screen.textContent = this.operations.multiply(this.firstArg, this.secondArg);
+        button.classList.remove('activeOperator');
+
     } 
     if (this.choosenSymbol === '/') {
         this.screen.textContent = this.operations.divide(this.firstArg, this.secondArg);
-    }     
+        button.classList.remove('activeOperator');
+    }    
+}
+// Calculator.prototype.ctx = function () {
+//     this.ctx = this.screen.textContent;
+// }
+Calculator.prototype.handleMinus = function () {
+    if (this.button.classList.contains('plus-minus')) {
+        console.log('huy')
+        this.screen.textContent = this.operations.plusMinus(this.firstArg);
+    }
 }

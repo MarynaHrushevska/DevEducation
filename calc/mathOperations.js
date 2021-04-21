@@ -50,3 +50,12 @@ MathOperations.prototype.equal = function(arg1, arg2) {
         return 'error';
     }
 }
+MathOperations.prototype.plusMinus = function(arg1) {
+    var a = Number(arg1);
+
+    if (typeof a === 'number') {
+        return a * (-1);
+    } else {
+        return 'error';
+    }
+}

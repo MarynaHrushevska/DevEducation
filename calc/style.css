@@ -171,4 +171,8 @@ body {
   display: -ms-flexbox;
   display: flex;
 }
+
+.activeOperator {
+  background: #fbd19e;
+}
 /*# sourceMappingURL=style.css.map */
