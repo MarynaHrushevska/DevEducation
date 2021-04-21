@@ -15,26 +15,17 @@ body {
     width: 300px;
     height: 475px;
     border: 1px solid black;
-    overflow: hidden;
+    // overflow: hidden;
     &__screen {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 525px;
+        text-align: center;
+        width: 100%;
         height: 100px;
         margin: 0 auto;
         background-color: #fff;
         font-size: 25px;
-        &-rotate {
-            position: absolute;
-            top: .5%;
-            right: 1%;
-            cursor: pointer;
-            &:hover {
-                transform: rotate(120deg);
-                transition-duration: .8s;
-            }
-        }
     }
     &__panel {
         display: flex;
@@ -62,6 +53,16 @@ body {
         }
     }
 }
+.rotate {
+    position: absolute;
+    top: .5%;
+    right: 1%;
+    cursor: pointer;
+    &:hover {
+        transform: rotate(120deg);
+        transition-duration: .8s;
+    }
+}
 .panel {
     &__symbol {
         background-color: rgb(251, 227, 197); 
@@ -82,6 +83,7 @@ body {
         }
     }
     &__clear {
+        width: 225px;
         background-color: rgba(255, 255, 255, 0.966);
         &:hover {
             background: linear-gradient(top, #ccc, #fff);
@@ -92,14 +94,11 @@ body {
             background: linear-gradient(top, #ccc, #fff);
         }
     }
-    &__clear {
-        width: 225px;
+    &__engineer {
+        background: rgb(240, 240, 240);
+        border: 1px solid #ccc;
+        &:hover {
+            background: linear-gradient(top, #ccc, #fff);
+        }
     }
-    // &__engineer {
-    //     background: rgb(240, 240, 240);
-    //     border: 1px solid #ccc;
-    //     &:hover {
-    //         background: linear-gradient(top, #ccc, #fff);
-    //     }
-    // }
 }
