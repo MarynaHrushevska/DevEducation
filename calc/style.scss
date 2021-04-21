@@ -8,18 +8,21 @@ body {
     background-color: rgb(98, 98, 98);
 }
 .container {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 300px;
-    height: 475px;
+    width: 302px;
+    height: 477px;
     border: 1px solid black;
-    // overflow: hidden;
+    overflow: hidden;
     &__screen {
         display: flex;
         justify-content: center;
         align-items: center;
+        display: block;
         text-align: center;
         width: 100%;
         height: 100px;
@@ -30,7 +33,7 @@ body {
     &__panel {
         display: flex;
         flex-wrap: wrap;
-        width: 525px;
+        width: 300px;
         height: 375px;
         &-btn {
             display: flex;
@@ -44,13 +47,23 @@ body {
         }
     }
     &.engineer {
-        width: 525px;
+        width: 527px;
         background: rgb(240, 240, 240);
         border: 1px solid #ccc;
         overflow: visible;
         &:hover {
             background: linear-gradient(top, #ccc, #fff);
         }
+
+        .container__engineer {
+            display: flex;
+        }
+    }
+    &__engineer {
+        display: none;
+        flex-wrap: wrap;
+        width: 225px;
+        height: 375px;
     }
 }
 .rotate {
@@ -101,4 +114,7 @@ body {
             background: linear-gradient(top, #ccc, #fff);
         }
     }
+}
+.group {
+    display: flex;
 }
