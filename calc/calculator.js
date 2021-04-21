@@ -3,6 +3,7 @@ var Calculator = function() {
     this.operations = new MathOperations();
 }
 Calculator.prototype.initDOMElement = function() {
+    this.container = document.getElementById('container');
     this.screen = document.getElementById('screen');
     this.panel = document.getElementById('panel');
     this.clear = document.getElementById('clear');
@@ -22,10 +23,15 @@ Calculator.prototype.initDOMElement = function() {
     this.dot = document.getElementById('dot');
     this.zero = document.getElementById('zero');
     this.equal = document.getElementById('equal');
+    this.switch = document.getElementById('switch');
 }
 Calculator.prototype.init = function() {
     this.initDOMElement();
     this.panel.addEventListener('click', this.handleClick.bind(this));
+    this.switch.addEventListener('click', this.switchCalcs.bind(this));
+}
+Calculator.prototype.switchCalcs = function() {
+    this.container.classList.toggle('engineer');
 }
 Calculator.prototype.handleClick = function(event) {
     var button = event.target;
