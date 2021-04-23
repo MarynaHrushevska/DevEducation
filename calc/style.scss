@@ -1,3 +1,17 @@
+$bg: #F5FFC6;
+$screen: #B4E1FF;
+$symbol: #C1FF9B;
+$symbol-hover: linear-gradient(to bottom, #C1FF9B, rgb(255, 224, 47));
+$container-border: rgb(0,0,0);
+$button-border: red;
+$button: #FFACE4;
+$button-hover: linear-gradient(to bottom, #AB87FF, #FFACE4);
+$engineer-button: #fa9cda;
+$engineer-button-hover: linear-gradient(to bottom, rgb(140, 110, 209), #FFACE4);
+$button-clear: #fbc8ea;
+$button-clear-hover: linear-gradient(to bottom, #ffd5f1, #fbc8ea);
+$active-button: rgb(255, 224, 47);
+$button-side: 75px;
 * {
     padding: 0;
     margin: 0;
@@ -5,7 +19,7 @@
     font-family: sans-serif;
 }
 body {
-    background-color: rgb(98, 98, 98);
+    background-color: $bg;
 }
 .container {
     display: flex;
@@ -16,7 +30,7 @@ body {
     transform: translate(-50%, -50%);
     width: 302px;
     height: 477px;
-    border: 1px solid black;
+    border: 1px solid $container-border;
     overflow: hidden;
     &__screen {
         display: flex;
@@ -26,7 +40,7 @@ body {
         width: 100%;
         height: 100px;
         margin: 0 auto;
-        background-color: #fff;
+        background-color: $screen; // screen color
         font-size: 25px;
     }
     &__panel {
@@ -34,26 +48,26 @@ body {
         flex-wrap: wrap;
         width: 300px;
         height: 375px;
+
         &-btn {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 75px;
-            height: 75px;
-            background-color: #fff;
-            border: 1px solid #ccc;
+            width: $button-side;
+            height: $button-side;
+            background-color: $button;
+            border: 1px solid $button-border;
             cursor: pointer;
         }
     }
     &.engineer {
         width: 527px;
-        background: rgb(240, 240, 240);
-        border: 1px solid #ccc;
+        border: 1px solid $button-border;
         overflow: visible;
+        background-color: $engineer-button;
         &:hover {
-            background: linear-gradient(top, #ccc, #fff);
+            background: $engineer-button-hover;
         }
-
         .container__engineer {
             display: flex;
         }
@@ -77,46 +91,47 @@ body {
 }
 .panel {
     &__symbol {
-        background-color: rgb(251, 227, 197); 
+        background-color: $symbol; 
         &:hover {
-            background:linear-gradient(top, rgb(251, 209, 158), #fff);
+            background: $symbol-hover;
         }
     }
+    &__equal {
+        background-color: $symbol; 
+            &:hover {
+                background: $symbol-hover;
+            }
+    }
     &__digit {
-        background-color: rgba(255, 255, 255, 0.931);
+        background-color: $button;
         &:hover {
-            background: linear-gradient(top, #ccc, #fff);
+            background: $button-hover;
         }
     }
     &__dot {
-        background-color: #fff;
+        background-color: $symbol;
         &:hover {
-            background: linear-gradient(top, #ccc, #fff);
+            background: $symbol-hover;
         }
     }
     &__clear {
         width: 225px;
-        background-color: rgba(255, 255, 255, 0.966);
+        background-color: $button-clear;
         &:hover {
-            background: linear-gradient(top, #ccc, #fff);
-        }
-    }
-    &__equal {
-        &:hover {
-            background: linear-gradient(top, #ccc, #fff);
+            background: $button-clear-hover;
         }
     }
     &__engineer {
-        background: rgb(240, 240, 240);
-        border: 1px solid #ccc;
+        background: $engineer-button;
+        border: 1px solid $button-border;
         &:hover {
-            background: linear-gradient(top, #ccc, #fff);
+            background: $engineer-button-hover;
         }
     }
 }
 .group {
     display: flex;
 }
-.activeOperator {
-    background: rgb(251, 209, 158);
-}
+// .activeOperator {
+//     background: $active-button;
+// }

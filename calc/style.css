@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #626262;
+  background-color: #F5FFC6;
 }
 
 .container {
@@ -43,7 +43,7 @@ body {
   width: 100%;
   height: 100px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: #B4E1FF;
   font-size: 25px;
 }
 
@@ -69,21 +69,21 @@ body {
           align-items: center;
   width: 75px;
   height: 75px;
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background-color: #FFACE4;
+  border: 1px solid red;
   cursor: pointer;
 }
 
 .container.engineer {
   width: 527px;
-  background: #f0f0f0;
-  border: 1px solid #ccc;
+  border: 1px solid red;
   overflow: visible;
+  background-color: #fa9cda;
 }
 
 .container.engineer:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#fff));
-  background: linear-gradient(top, #ccc, #fff);
+  background: -webkit-gradient(linear, left top, left bottom, from(#8c6ed1), to(#FFACE4));
+  background: linear-gradient(to bottom, #8c6ed1, #FFACE4);
 }
 
 .container.engineer .container__engineer {
@@ -115,64 +115,64 @@ body {
 }
 
 .panel__symbol {
-  background-color: #fbe3c5;
+  background-color: #C1FF9B;
 }
 
 .panel__symbol:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(#fbd19e), to(#fff));
-  background: linear-gradient(top, #fbd19e, #fff);
+  background: -webkit-gradient(linear, left top, left bottom, from(#C1FF9B), to(#ffe02f));
+  background: linear-gradient(to bottom, #C1FF9B, #ffe02f);
+}
+
+.panel__equal {
+  background-color: #C1FF9B;
+}
+
+.panel__equal:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#C1FF9B), to(#ffe02f));
+  background: linear-gradient(to bottom, #C1FF9B, #ffe02f);
 }
 
 .panel__digit {
-  background-color: rgba(255, 255, 255, 0.931);
+  background-color: #FFACE4;
 }
 
 .panel__digit:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#fff));
-  background: linear-gradient(top, #ccc, #fff);
+  background: -webkit-gradient(linear, left top, left bottom, from(#AB87FF), to(#FFACE4));
+  background: linear-gradient(to bottom, #AB87FF, #FFACE4);
 }
 
 .panel__dot {
-  background-color: #fff;
+  background-color: #C1FF9B;
 }
 
 .panel__dot:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#fff));
-  background: linear-gradient(top, #ccc, #fff);
+  background: -webkit-gradient(linear, left top, left bottom, from(#C1FF9B), to(#ffe02f));
+  background: linear-gradient(to bottom, #C1FF9B, #ffe02f);
 }
 
 .panel__clear {
   width: 225px;
-  background-color: rgba(255, 255, 255, 0.966);
+  background-color: #fbc8ea;
 }
 
 .panel__clear:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#fff));
-  background: linear-gradient(top, #ccc, #fff);
-}
-
-.panel__equal:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#fff));
-  background: linear-gradient(top, #ccc, #fff);
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffd5f1), to(#fbc8ea));
+  background: linear-gradient(to bottom, #ffd5f1, #fbc8ea);
 }
 
 .panel__engineer {
-  background: #f0f0f0;
-  border: 1px solid #ccc;
+  background: #fa9cda;
+  border: 1px solid red;
 }
 
 .panel__engineer:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#fff));
-  background: linear-gradient(top, #ccc, #fff);
+  background: -webkit-gradient(linear, left top, left bottom, from(#8c6ed1), to(#FFACE4));
+  background: linear-gradient(to bottom, #8c6ed1, #FFACE4);
 }
 
 .group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.activeOperator {
-  background: #fbd19e;
 }
 /*# sourceMappingURL=style.css.map */
