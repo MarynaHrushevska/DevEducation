@@ -68,15 +68,15 @@ MathOperations.prototype.oneXth = function (arg1) {
     var numb1 = Number(arg1);
     return 1/numb1;
 }
-MathOperations.prototype.square = function (arg) {
+MathOperations.prototype.square = function (arg1) {
     var numb1 = Number(arg1);
     return numb1 * numb1;
 }
-MathOperations.prototype.cube = function (arg) {
+MathOperations.prototype.cube = function (arg1) {
     var numb1 = Number(arg1);
     return numb1 * numb1 * numb1;
 }
-MathOperations.prototype.degree = function (arg1, arg2) {
+MathOperations.prototype.powerOfNumber = function (arg1, arg2) {
     var numb1 = Number(arg1);
     var numb2 = Number(arg2);
     var temp = numb1;
@@ -103,7 +103,7 @@ MathOperations.prototype.mod = function (arg1, arg2) {
 }
 MathOperations.prototype.naturalLogarithm = function (arg1) {
     var numb1 = Number(arg1);
-    return Math.LN10(numb1);    
+    return Math.log(numb1);    
 }
 MathOperations.prototype.logarithm = function (arg1) {
     var numb1 = Number(arg1);
