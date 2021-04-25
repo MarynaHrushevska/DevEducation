@@ -16,50 +16,50 @@
         <div id="switch" class="rotate">&orarr;</div>
         <div class="group">
             <div id="engineer" class="container__engineer">
-                <div id="left-bracket" class="container__panel-btn panel__engineer left" >(</div> 
+                <div id="left-bracket" class="container__panel-btn panel__engineer left">(</div> 
                 <div id="right-bracket" class="container__panel-btn panel__engineer">)</div>
-                <div id="factorial" class="container__panel-btn panel__engineer" title="Calculate the factorial of the displayed value">n!</div>
+                <div id="factorial" class="container__panel-btn panel__engineer" title="Calculate the factorial of the displayed value" data-type="unary">n!</div>
 
-                <div id="tenX" class="container__panel-btn panel__engineer" title="Calculate 10 to the power of the displayed value">10&#829;</div>
-                <div id="pi" class="container__panel-btn panel__engineer pi" title="Enter pi">&#960;</div>
-                <div id="exponential" class="container__panel-btn panel__engineer" title="Enter e">e</div>
+                <div id="tenX" class="container__panel-btn panel__engineer" title="Calculate 10 to the power of the displayed value" data-type="unary">10&#829;</div>
+                <div id="pi" class="container__panel-btn panel__engineer pi" title="Enter pi" data-type="displayResult">&#960;</div>
+                <div id="exponential" class="container__panel-btn panel__engineer" title="Enter e" data-type="displayResult">e</div>
     
-                <div id="square" class="container__panel-btn panel__engineer" title="Square the displayed value">x&#178;</div>
-                <div id="one-divide-x" class="container__panel-btn panel__engineer" title="Calculate the inverse of the displayed value">&#185;/x</div>
-                <div id="math-abs" class="container__panel-btn panel__engineer" title="Return absolute value">|x|</div>
+                <div id="square" class="container__panel-btn panel__engineer" title="Square the displayed value" data-type="unary">x&#178;</div>
+                <div id="one-divide-x" class="container__panel-btn panel__engineer" title="Calculate the inverse of the displayed value" data-type="unary">&#185;/x</div>
+                <div id="math-abs" class="container__panel-btn panel__engineer" title="Return absolute value" data-type="unary">|x|</div>
                 
-                <div id="cube-number" class="container__panel-btn panel__engineer" title="Cube the displayed number">x&#179;</div>
+                <div id="cube-number" class="container__panel-btn panel__engineer" title="Cube the displayed number" data-type="unary">x&#179;</div>
                 <div id="exp" class="container__panel-btn panel__engineer" >exp</div>
-                <div id="mod" class="container__panel-btn panel__engineer" title="ostatok ot deleniya">mod</div>
+                <div id="mod" class="container__panel-btn panel__engineer" title="ostatok ot deleniya" data-type="binary">mod</div>
     
-                <div id="power-number" class="container__panel-btn panel__engineer" title="Raise the displayed value to the power of the next value entered">x&#8305;</div>
-                <div id="ln" class="container__panel-btn panel__engineer" title="Calculate the natural logarithm of the displayed value">ln</div>
-                <div id="log" class="container__panel-btn panel__engineer" title="Calculate the base 10 logarithm of the displayed value">log</div>
+                <div id="power-number" class="container__panel-btn panel__engineer" title="Raise the displayed value to the power of the next value entered" data-type="binary">x&#8305;</div>
+                <div id="ln" class="container__panel-btn panel__engineer" title="Calculate the natural logarithm of the displayed value" data-type="unary">ln</div>
+                <div id="log" class="container__panel-btn panel__engineer" title="Calculate the base 10 logarithm of the displayed value" data-type="unary">log</div>
             </div>
 
             <div id="panel" class="container__panel panel">
-                <div id="clear" class="container__panel-btn panel__delete panel__clear" title="Clear">C</div>
-                <div id="divide" class="container__panel-btn panel__symbol">/</div>
+                <div id="clear" class="container__panel-btn panel__delete panel__clear" title="Clear" data-type="clear">C</div>
+                <div id="divide" class="container__panel-btn panel__symbol" data-type="binary">/</div>
     
-                <div id="seven" class="container__panel-btn panel__digit">7</div>
-                <div id="eight" class="container__panel-btn panel__digit">8</div>
-                <div id="nine" class="container__panel-btn panel__digit">9</div>
-                <div id="multiply" class="container__panel-btn panel__symbol">x</div>
+                <div id="seven" class="container__panel-btn panel__digit" data-type="digit">7</div>
+                <div id="eight" class="container__panel-btn panel__digit" data-type="digit">8</div>
+                <div id="nine" class="container__panel-btn panel__digit" data-type="digit">9</div>
+                <div id="multiply" class="container__panel-btn panel__symbol" data-type="binary">x</div>
     
-                <div id="four" class="container__panel-btn panel__digit">4</div>
-                <div id="five" class="container__panel-btn panel__digit">5</div>
-                <div id="six" class="container__panel-btn panel__digit">6</div>
-                <div id="subtract" class="container__panel-btn panel__symbol">-</div>
+                <div id="four" class="container__panel-btn panel__digit" data-type="digit">4</div>
+                <div id="five" class="container__panel-btn panel__digit" data-type="digit">5</div>
+                <div id="six" class="container__panel-btn panel__digit" data-type="digit">6</div>
+                <div id="subtract" class="container__panel-btn panel__symbol" data-type="binary">-</div>
     
-                <div id="one" class="container__panel-btn panel__digit">1</div>
-                <div id="two" class="container__panel-btn panel__digit">2</div>
-                <div id="three" class="container__panel-btn panel__digit">3</div>
-                <div id="plus" class="container__panel-btn panel__symbol">+</div>
+                <div id="one" class="container__panel-btn panel__digit" data-type="digit">1</div>
+                <div id="two" class="container__panel-btn panel__digit" data-type="digit">2</div>
+                <div id="three" class="container__panel-btn panel__digit" data-type="digit">3</div>
+                <div id="plus" class="container__panel-btn panel__symbol" data-type="binary">+</div>
     
-                <div id="zero" class="container__panel-btn panel__digit">0</div>
-                <div id="add-minus" class="container__panel-btn panel__symbol plus__minus">&#8723;</div>
-                <div id="dot" class="container__panel-btn panel__dot">.</div>
-                <div id="equal" class="container__panel-btn panel__equal">=</div>
+                <div id="zero" class="container__panel-btn panel__digit" data-type="digit">0</div>
+                <div id="add-minus" class="container__panel-btn panel__symbol plus__minus" data-type="unary">&#8723;</div>
+                <div id="dot" class="container__panel-btn panel__dot" data-type="dot">.</div>
+                <div id="equal" class="container__panel-btn panel__equal" data-type="equal">=</div>
             </div>
         </div>
     </div>

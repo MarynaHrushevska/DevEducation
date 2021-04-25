@@ -114,6 +114,10 @@ body {
           transition-duration: .8s;
 }
 
+.panel {
+  font-size: 18px;
+}
+
 .panel__symbol {
   background-color: #C1FF9B;
 }
@@ -174,5 +178,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.activeOperator {
+  background: #ffe02f;
 }
 /*# sourceMappingURL=style.css.map */

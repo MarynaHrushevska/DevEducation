@@ -91,6 +91,7 @@ body {
     }
 }
 .panel {
+    font-size: 18px;
     &__symbol {
         background-color: $symbol; 
         &:hover {
@@ -133,6 +134,6 @@ body {
 .group {
     display: flex;
 }
-// .activeOperator {
-//     background: $active-button;
-// }
+.activeOperator {
+    background: $active-button;
+}
