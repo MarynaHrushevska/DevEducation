@@ -1,0 +1,63 @@
+
+Задания по SQL	
+Даны две таблицы:
+Список улиц   - Street (Id, Name)
+Cписок жильцов   - Person (Id, FirstName, LastName, Age, Id_Street)
+
+Задания:
+1.  Вывести общее число жителей
+2.  Вывести средний возраст жителей
+3.  Вывести отсортированный по алфавиту список фамилий без повторений
+4.  Вывести список фамилий, с указанием количества повторений этих фамилий в общем списке
+5.  Вывести фамилии, которые содержат в середине букву «б»
+6.  Вывести список «бомжей»
+7.  Вывести список несовершеннолетних, проживающих на проспекте Правды
+8.  Вывести упорядоченный по алфавиту список всех улиц с указанием, сколько жильцов живёт на улице
+9.  Вывести список улиц, название которых состоит из 6-ти букв
+10. Вывести список улиц с количеством жильцов на них меньше 3.
+
+
+Создание базы данных 
+CREATE DATABASE cityDwellers;
+USE cityDwellers;
+
+Создание таблиц
+CREATE TABLE Streets (
+    StreetID PRIMARY KEY AUTO_INCREMENT ,
+    streetName VARCHAR (50),
+);
+CREATE TABLE Person (
+    PersonId PRIMARY KEY AUTO_INCREMENT,
+    PersonFirstName VARCHAR (50),
+    PersonLastName VARCHAR (50),
+    PersonAge VARCHAR (3),
+    Id_Street INT,
+    FOREIGN KEY (Id_Street)  REFERENCES Streets (StreetID)
+);
+
+INSERT INTO Streets (streetName) VALUES ('Деребасовская');
+INSERT INTO Streets (streetName) VALUES ('Приморская');
+INSERT INTO Streets (streetName) VALUES ('Княжеская');
+INSERT INTO Streets (streetName) VALUES ('Пастера');
+INSERT INTO Streets (streetName) VALUES ('Торговая');
+INSERT INTO Streets (streetName) VALUES ('Новосельского');
+INSERT INTO Streets (streetName) VALUES ('Старопортофранковская');
+INSERT INTO Streets (streetName) VALUES ('Соборная');
+INSERT INTO Streets (streetName) VALUES ('Екатерининская');
+INSERT INTO Streets (streetName) VALUES ('Решельевского');
+INSERT INTO Streets (streetName) VALUES ('Пушкинская');
+
+INSERT INTO Person (PersonFirstName, PersonLastName, PersonAge) VALUES ('Brendon', 'Urie', '34', '1;);
+INSERT INTO Person (PersonFirstName, PersonLastName, PersonAge) VALUES ('Sarah', 'Urie', '33', '1');
+INSERT INTO Person (PersonFirstName, PersonLastName, PersonAge) VALUES ('Tyler', 'Joseph', '32', '2');
+INSERT INTO Person (PersonFirstName, PersonLastName, PersonAge) VALUES ('Jenna', 'Joseph', '32', '2');
+INSERT INTO Person (PersonFirstName, PersonLastName, PersonAge) VALUES ('Rosie', 'Joseph', '1', '2');
+INSERT INTO Person (PersonFirstName, PersonLastName, PersonAge) VALUES ('Josh', 'Dun', '32', '3');
+INSERT INTO Person (PersonFirstName, PersonLastName, PersonAge) VALUES ('Debby', 'Ryan', '27', '3');
+INSERT INTO Person (PersonFirstName, PersonLastName, PersonAge) VALUES ('Pete', 'Wentz', '41', '4');
+INSERT INTO Person (PersonFirstName, PersonLastName, PersonAge) VALUES ('Patrick', 'Stump', '36', '5');
+INSERT INTO Person (PersonFirstName, PersonLastName, PersonAge) VALUES ('Joe', 'Trohman', '36', '6');
+INSERT INTO Person (PersonFirstName, PersonLastName, PersonAge) VALUES ('Andy', 'Hurley', '40', '7');
+
+Задания
+1. 
