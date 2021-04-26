@@ -16,48 +16,82 @@ Cписок жильцов   - Person (Id, FirstName, LastName, Age, Id_Street)
 9.  Вывести список улиц, название которых состоит из 6-ти букв
 10. Вывести список улиц с количеством жильцов на них меньше 3.
 
-
 Создание базы данных 
 CREATE DATABASE cityDwellers;
 USE cityDwellers;
 
 Создание таблиц
 CREATE TABLE Streets (
-    StreetID PRIMARY KEY AUTO_INCREMENT ,
-    streetName VARCHAR (50),
+    StreetID INT PRIMARY KEY AUTO_INCREMENT ,
+    streetName VARCHAR (50)
 );
-CREATE TABLE Person (
-    PersonId PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE People (
+    PersonId INT PRIMARY KEY AUTO_INCREMENT,
     PersonFirstName VARCHAR (50),
     PersonLastName VARCHAR (50),
     PersonAge VARCHAR (3),
     Id_Street INT,
-    FOREIGN KEY (Id_Street)  REFERENCES Streets (StreetID)
+    FOREIGN KEY (Id_Street) REFERENCES Streets (StreetID)
 );
 
 INSERT INTO Streets (streetName) VALUES ('Деребасовская');
 INSERT INTO Streets (streetName) VALUES ('Приморская');
-INSERT INTO Streets (streetName) VALUES ('Княжеская');
-INSERT INTO Streets (streetName) VALUES ('Пастера');
 INSERT INTO Streets (streetName) VALUES ('Торговая');
 INSERT INTO Streets (streetName) VALUES ('Новосельского');
 INSERT INTO Streets (streetName) VALUES ('Старопортофранковская');
 INSERT INTO Streets (streetName) VALUES ('Соборная');
-INSERT INTO Streets (streetName) VALUES ('Екатерининская');
 INSERT INTO Streets (streetName) VALUES ('Решельевского');
 INSERT INTO Streets (streetName) VALUES ('Пушкинская');
 
-INSERT INTO Person (PersonFirstName, PersonLastName, PersonAge) VALUES ('Brendon', 'Urie', '34', '1;);
-INSERT INTO Person (PersonFirstName, PersonLastName, PersonAge) VALUES ('Sarah', 'Urie', '33', '1');
-INSERT INTO Person (PersonFirstName, PersonLastName, PersonAge) VALUES ('Tyler', 'Joseph', '32', '2');
-INSERT INTO Person (PersonFirstName, PersonLastName, PersonAge) VALUES ('Jenna', 'Joseph', '32', '2');
-INSERT INTO Person (PersonFirstName, PersonLastName, PersonAge) VALUES ('Rosie', 'Joseph', '1', '2');
-INSERT INTO Person (PersonFirstName, PersonLastName, PersonAge) VALUES ('Josh', 'Dun', '32', '3');
-INSERT INTO Person (PersonFirstName, PersonLastName, PersonAge) VALUES ('Debby', 'Ryan', '27', '3');
-INSERT INTO Person (PersonFirstName, PersonLastName, PersonAge) VALUES ('Pete', 'Wentz', '41', '4');
-INSERT INTO Person (PersonFirstName, PersonLastName, PersonAge) VALUES ('Patrick', 'Stump', '36', '5');
-INSERT INTO Person (PersonFirstName, PersonLastName, PersonAge) VALUES ('Joe', 'Trohman', '36', '6');
-INSERT INTO Person (PersonFirstName, PersonLastName, PersonAge) VALUES ('Andy', 'Hurley', '40', '7');
+INSERT INTO People ( PersonFirstName, PersonLastName, PersonAge, Id_Street ) VALUES ('Brendon', 'Urie', '34', '1;);
+INSERT INTO People ( PersonFirstName, PersonLastName, PersonAge, Id_Street ) VALUES ('Sarah', 'Urie', '33', '1');
+INSERT INTO People ( PersonFirstName, PersonLastName, PersonAge, Id_Street ) VALUES ('Tyler', 'Joseph', '32', '2');
+INSERT INTO People ( PersonFirstName, PersonLastName, PersonAge, Id_Street ) VALUES ('Jenna', 'Joseph', '32', '2');
+INSERT INTO People ( PersonFirstName, PersonLastName, PersonAge, Id_Street ) VALUES ('Rosie', 'Joseph', '1', '2');
+INSERT INTO People ( PersonFirstName, PersonLastName, PersonAge, Id_Street ) VALUES ('Josh', 'Dun', '32', '3');
+INSERT INTO People ( PersonFirstName, PersonLastName, PersonAge, Id_Street ) VALUES ('Debby', 'Ryan', '27', '3');
+INSERT INTO People ( PersonFirstName, PersonLastName, PersonAge, Id_Street ) VALUES ('Pete', 'Wentz', '41', '4');
+INSERT INTO People ( PersonFirstName, PersonLastName, PersonAge, Id_Street ) VALUES ('Patrick', 'Stump', '36', '5');
+INSERT INTO People ( PersonFirstName, PersonLastName, PersonAge, Id_Street ) VALUES ('Joe', 'Trohman', '36', '6');
+INSERT INTO People ( PersonFirstName, PersonLastName, PersonAge, Id_Street ) VALUES ('Andy', 'Hurley', '40', '7');
 
 Задания
-1. 
+1.  Вывести общее число жителей
+SELECT COUNT(*) FROM People  ;
+
+2. Вывести средний возраст жителей
+SELECT AVG(PersonAge) FROM People ;
+
+3.  Вывести отсортированный по алфавиту список фамилий без повторений
+SELECT DISTINCT PersonLastName FROM People ORDER BY PersonLastName ;
+
+4.  Вывести список фамилий, с указанием количества повторений этих фамилий в общем списке
+SELECT PersonLastName, COUNT(*) FROM People GROUP BY PersonLastName ;
+
+5.  Вывести фамилии, которые содержат в середине букву «б»
+SELECT PersonLastName FROM People WHERE PersonLastName LIKE '_%б%_';
+
+6.  Вывести список «бомжей»
+SELECT * FROM People WHERE Id_Street IS NULL ;
+
+7.  Вывести список несовершеннолетних, проживающих на Дерибасовской :D
+SELECT People.* 
+FROM People 
+JOIN Streets ON People.Id_Street = Streets.StreetID
+WHERE Streets.streetName LIKE '%Деребасовская%' AND People.PersonAge < 18 ;
+
+8.  Вывести упорядоченный по алфавиту список всех улиц с указанием, сколько жильцов живёт на улице
+SELECT Streets.streetId, Streets.streetName, COUNT(People.personID) 
+FROM Streets 
+JOIN People ON Streets.streetId = People.Id_Street 
+GROUP BY Streets.streetId, Streets.streetName
+
+9.  Вывести список улиц, название которых состоит из 6-ти букв 
+SELECT * FROM Streets WHERE LENGTH(streetName) = 6 ;
+
+10. Вывести список улиц с количеством жильцов на них меньше 3.
+SELECT Streets.StreetID, Streets.streetName 
+FROM Streets 
+JOIN People ON Streets.StreetID = People.Id_Street
+GROUP BY Streets.StreetID, Streets.streetName
+HAVING COUNT(People.PersonId) < 3 ;
