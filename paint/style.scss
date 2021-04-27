@@ -18,8 +18,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-
-        animation: about 5s 15 alternate;
+        animation: title 5s 15 alternate;
         animation-delay: 5s;
     }
 }
@@ -27,17 +26,24 @@
     width: 100vw;
     height: 100%;
     display: flex;
-
     &__content {
+        position: relative;
         width: 66.66%;
         &-canvas {
-            width: 100%;
-            height: 100%;
+            width: 960px;
+            height: 695px;
+        }
+        &-bin {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            &:hover {
+                transform: scale(1.2);
+            }
         }
     }
     &__sidebar {
         width: 33.33%;
-
         background: linear-gradient(to top, rgb(188, 255, 224), #fff);
         &-inputs {
             margin: 0 auto;
@@ -47,9 +53,25 @@
             flex-direction: column;  
             justify-content: space-around;  
         }
+        &-slider, 
+        &-color {
+            display: flex;
+            justify-content: space-between;
+        }
+        &-save {
+            margin: 0 auto;
+            width: 100px;
+            height: 30px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: linear-gradient(to top, #ccc, #fff);
+            &:hover {
+                background: linear-gradient(to bottom, rgb(139, 139, 139), #fff);  
+            }
+        }
     }
 }
-@keyframes about{
+@keyframes title {
     0%{
         color: red;
     }
@@ -65,4 +87,4 @@
     100%{
         color:  black;
     }
-  }
+}

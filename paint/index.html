@@ -8,16 +8,15 @@
     <script src="script.js" defer></script>
     <title>Paint</title>
 </head>
-<body>
+<body id="body">
     <div class="wrapper">
         <header class="header">
             <h1 class="header__title">P A I N T</h1>
         </header>
         <main class="main">
             <div id="content" class="main__content">
-                <canvas id="myCanvas" class="main__content-canvas">
-                    
-                </canvas> 
+                <div id="bin" class="main__content-bin">&#128465;</div>
+                <canvas id="myCanvas" class="main__content-canvas"></canvas> 
             </div>
             <div class="main__sidebar">
                 <div class="main__sidebar-inputs">
@@ -25,9 +24,9 @@
                         <input id="myColor" type="color">
                     </label>
                     <label class="main__sidebar-slider" for="slider">Сhoose thickness
-                        1<input id="myThickness" type="range" min="1" max="50" step="5">50
+                        <input id="myThickness" list="tickmarks" type="range" min="1" max="50" step="5" value="5">
                     </label>
-                    <button>Save</button>
+                    <button id="save-img" class="main__sidebar-save">Save</button>
                 </div>
             </div>
         </main>
