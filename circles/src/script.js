@@ -1,9 +1,19 @@
-import Circles from './model';
+import { Model } from './model';
+import { View } from './view';
+import { Controller } from './controller';
 import './styles/style.css'
 
-var svgField = document.getElementById('svg');
+var init = function () {
+    var model = new Model();
+    var view = new View();
+    var controller = new Controller();
 
-svgField.addEventListener('click', function() {
-    console.log('click and clup');
-})
-var circle = new Circles(15);
+    controller.play();
+}
+init();
+// var svgField = document.getElementById('svg');
+
+// svgField.addEventListener('click', function() {
+//     console.log('click and clup');
+// })
+// var circle = new Circles(15);
