@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="gallery" id="general">
+        <div class="gallery__display" id="display">
+            <button id="showAll" class="gallery__display-showAll">Show All</button>
+            <div class="gallery__display-container">
+                <image class="gallery__display-mainPhoto" id="mainPhoto"/>
+            </div>
+        </div>
+        <div class="gallery__slider" id="slider">
+            <div class="gallery__slider-wrapper">
+                <div class="gallery__slider-container" id="photos">
+                    <image class="gallery__slider-photo photo1" src="./src/photo1.jpg" alt="cat 1" data-type="photo"/>
+                    <image class="gallery__slider-photo photo2" src="./src/photo2.jpg" alt="cat 2" data-type="photo"/>
+                    <image class="gallery__slider-photo photo3" src="./src/photo3.jpg" alt="cat 3" data-type="photo"/>
+                    <image class="gallery__slider-photo photo4" src="./src/photo4.jpg" alt="cat 4" data-type="photo"/>
+                    <image class="gallery__slider-photo photo5" src="./src/photo5.jpg" alt="cat 5" data-type="photo"/>
+                    <image class="gallery__slider-photo photo6" src="./src/photo6.jpg" alt="cat 6" data-type="photo"/>
+                    <image class="gallery__slider-photo photo7" src="./src/photo7.jpg" alt="cat 7" data-type="photo"/>
+                    <image class="gallery__slider-photo photo8" src="./src/photo8.jpg" alt="cat 8" data-type="photo"/>
+                    <image class="gallery__slider-photo photo9" src="./src/photo9.jpg" alt="cat 9" data-type="photo"/>
+                    <image class="gallery__slider-photo photo10" src="./src/photo10.jpg" alt="cat 10" data-type="photo">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="showAllPopup" class="showAllPopup hideShowAllPopup">
+        <div id="closeShowAllPopup" class="showAllPopup__button">
+            <button class="showAllPopup__button-close">X</button>
+        </div>
+        <div class="showAllPopup__container">
+            <image id="showAllPhoto" class="showAllPopup__photo"/>
+        </div>
+    </div>
+</body>
+</html>
