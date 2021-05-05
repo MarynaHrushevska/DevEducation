@@ -1,0 +1,5 @@
+/node_modules
+*.json
+style.css
+style.css.map
+note.txt
