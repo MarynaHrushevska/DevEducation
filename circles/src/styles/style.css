@@ -18,8 +18,10 @@
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 80%;
-  height: 80%;
+  /*width: 80%;*/
+  /*height: 80%;*/
+width: 1024px;
+height: 768px;
   border: 1px dashed #ccc;
   background-color: #fff;
   -webkit-box-shadow: 3px 3px 10px #ccc;

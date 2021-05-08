@@ -1,27 +1,32 @@
 {
-  "name": "circles",
+  "name": "circle",
   "version": "1.0.0",
-  "description": "",
-  "main": "script.js",
+  "description": "test canvas project",
+  "main": "index.js",
   "scripts": {
-    "dev": "webpack serve --mode=development --open",
-    "start": "webpack --mode=development",
-    "build": "webpack --mode=production"
+    "start": "webpack serve",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "dmitryc@wizardsdev.com",
   "license": "ISC",
-  "devDependencies": {
-    "clean-webpack-plugin": "^4.0.0-alpha.0",
-    "css-loader": "^5.2.4",
-    "html-webpack-plugin": "^5.3.1",
-    "sass-loader": "^11.0.1",
-    "style-loader": "^2.0.0",
-    "webpack": "^5.36.1",
-    "webpack-cli": "^4.6.0",
-    "webpack-dev-server": "^3.11.2"
-  },
   "dependencies": {
-    "path": "^0.12.7",
-    "sass": "^1.32.11"
+    "@babel/core": "7.13.8",
+    "@babel/preset-env": "7.13.8",
+    "@babel/plugin-proposal-class-properties": "7.13.0",
+    "babel-loader": "8.2.2",
+    "webpack": "4.46.0",
+    "webpack-cli": "4.6.0",
+    "webpack-dev-server": "3.11.2",
+    "html-webpack-plugin": "4.5.2",
+    "jest": "26.6.3"
+  },
+  "devDependencies": {
+    "css-loader": "^5.2.4",
+    "mini-css-extract-plugin": "^1.6.0",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.1",
+    "scss-loader": "0.0.1",
+    "style-loader": "^2.0.0"
   }
 }

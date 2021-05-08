@@ -1,34 +1,51 @@
 const path = require('path');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    entry: {
-        bundle: path.resolve(__dirname,'src/script.js'),
+    mode: 'development',
+    entry: path.resolve(__dirname, './src'),
+    output: {
+        path: path.resolve(__dirname, './public'),
+        filename: 'bundle.js',
+    },
+    devServer: {
+        contentBase: path.resolve(__dirname, './public'),
+        port: 3000,
+        hot: true,
+        open: true,
+        writeToDisk: pathToFile => /(index\.html$)|(bundle\.js$)|(styles\.css$)/.test(pathToFile),
     },
     module: {
         rules: [
-            {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+            { test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env'],
+                        plugins: ['@babel/plugin-proposal-class-properties']
+                    },
+                },
             },
             {
-                test: /\.s[ac]ss$/,
-                use: ['style-loader', 'css-loader']
-            }
-        ]
+                test: /\.(scss|css)$/,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
+            },
+            { test: '/\.html$', use: HtmlWebpackPlugin.loader }
+        ],
     },
     plugins: [
-        new HTMLWebpackPlugin({
-            template: path.resolve(__dirname,'src/index.html')
+        new HtmlWebpackPlugin({
+            template: 'src/index.html',
+            filename: 'index.html',
         }),
-        new CleanWebpackPlugin()
-    ],
-    output: {
-        filename: '[name].[contenthash].js',
-        path: path.resolve(__dirname,'dist'),
-    },
-    devServer: {
-        port: 7777,
-    }
-}
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // all options are optional
+            filename: '[name].css',
+            chunkFilename: '[id].css',
+            ignoreOrder: false, // Enable to remove warnings about conflicting order
+        }),
+    ]
+};
