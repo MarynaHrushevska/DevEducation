@@ -8,4 +8,4 @@ const qoutes = [`“A vacation is what you take when you can no longer take what
 `“The vacation we often need is freedom from our own mind.” -Jack Adam Weber`,
 `“A vacation is having nothing to do and all day to do it in.” – Robert Orben`,
 `“I love my job only when I’m on vacation.”`,
-`“I hope your vacation gives you the pleasure you need so that you don’t have to think of any problems back at home.  Enjoy your vacation.”`,]
+`“I hope your vacation gives you the pleasure you need so that you don’t have to think of any problems back at home.  Enjoy your vacation.”`]
