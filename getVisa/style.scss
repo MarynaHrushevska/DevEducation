@@ -15,8 +15,13 @@
             flex-direction: column;
             justify-content: center;
             align-items: flex-end;
+            position: absolute;
+            right: 0;
+            font-size: 18px;
         }
         &-icon {
+            position: absolute;
+            left: 0;
             color: yellow;
             font-size: 60px;
             transform: rotate(360deg);
@@ -80,6 +85,7 @@
 }
 .container {
     &__header {
+        position: relative;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -93,7 +99,6 @@
         width: 80%;
         height: 721px;
         margin: 0 auto;
-        // border: 1px solid green;
     }
     &__race {
         display: flex;
@@ -123,6 +128,7 @@
         width: 200px;
         height: 30px;
         padding: 10px;
+        text-align: center;
     }
     &__button {
         width: 120px;
@@ -131,6 +137,53 @@
         background: rgb(201, 132, 207);
         font-size: 17px;
         cursor: pointer;
+        &:hover {
+            background: rgb(132, 0, 255);
+        }
+    }
+    &__balance {
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+    }
+    &__age {
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+    }
+    &__generateAll {
+        background: rgb(187, 255, 0);
+        &:hover {
+            background: rgb(0, 170, 28);
+        }
+    }
+    &__addCandidate {
+        background: rgb(0, 132, 255);
+        &:hover {
+            background: rgb(22, 0, 224);
+        }
+    }
+    &__init {
+        background: rgb(255, 157, 0);
+        &:hover {
+            background: rgb(223, 119, 0);
+        }
+    }
+    &__race {
+        background: rgb(0, 255, 0);
+        &:hover {
+            background: rgb(32, 138, 0);
+        }
+    }
+    &__clear {
+        background: rgb(255, 0, 106);
+        &:hover {
+            background: rgb(138, 0, 0);
+        }
     }
 }
 .hide {

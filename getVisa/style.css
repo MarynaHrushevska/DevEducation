@@ -30,9 +30,14 @@
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  position: absolute;
+  right: 0;
+  font-size: 18px;
 }
 
 .general__header-icon {
+  position: absolute;
+  left: 0;
   color: yellow;
   font-size: 60px;
   -webkit-transform: rotate(360deg);
@@ -133,6 +138,7 @@
 }
 
 .container__header {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -200,6 +206,7 @@
   width: 200px;
   height: 30px;
   padding: 10px;
+  text-align: center;
 }
 
 .main__button {
@@ -209,6 +216,60 @@
   background: #c984cf;
   font-size: 17px;
   cursor: pointer;
+}
+
+.main__button:hover {
+  background: #8400ff;
+}
+
+.main__balance::-webkit-outer-spin-button, .main__balance::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.main__age::-webkit-outer-spin-button, .main__age::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.main__generateAll {
+  background: #bbff00;
+}
+
+.main__generateAll:hover {
+  background: #00aa1c;
+}
+
+.main__addCandidate {
+  background: #0084ff;
+}
+
+.main__addCandidate:hover {
+  background: #1600e0;
+}
+
+.main__init {
+  background: #ff9d00;
+}
+
+.main__init:hover {
+  background: #df7700;
+}
+
+.main__race {
+  background: lime;
+}
+
+.main__race:hover {
+  background: #208a00;
+}
+
+.main__clear {
+  background: #ff006a;
+}
+
+.main__clear:hover {
+  background: #8a0000;
 }
 
 .hide {

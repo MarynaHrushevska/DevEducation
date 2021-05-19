@@ -13,160 +13,160 @@
             <div class="container__header">
                 <div class="general__header-icon">&#9728;</div>
                 <div class="general__header-logo">
-                    <p class="general__header-quote">A vacation is what you take when you can no longer take what you’ve been taking. – Earl Wilson</p>
+                    <p id="quote" class="general__header-quote">“A vacation is what you take when you can no longer take what you’ve been taking.” – Earl Wilson</p>
                 </div>
             </div>
         </header>
         <main class="general__main">
-            <div class="container__main ">
-                <form class="general__main-form" action="">
+            <div id="tab1" class="container__main ">
+                <form id="form" class="general__main-form" action="">
                     <div class="general__main-name form-field">
                         <label for="name" class="main__name-label main__label">Name</label>
                         <input type="text" name="name" id="name" class="main__name-input main__input">
-                        <button class="main__name-button main__button">Generate</button>
+                        <button id="generate-name" type="button" class="main__name-button main__button">Generate</button>
                     </div>
                     <div class="general__main-balance form-field">
                         <label for="balance" class="main__balance-label main__label">Balance</label>
-                        <input type="number" name="balance" id="balance" class="main__balance-input main__input">
-                        <button class="main__balance-button main__button">Generate</button>
+                        <input type="number" name="balance" id="balance" class="main__balance main__input">
+                        <button type="button" id="generate-balance" class="main__balance-button main__button">Generate</button>
                     </div>
                     <div class="general__main-age form-field">
                         <label for="age" class="main__age-label main__label">Age</label>
-                        <input type="number" name="age" id="age" class="main__age-input main__input">
-                        <button class="main__age-button main__button">Generate</button>
+                        <input type="number" name="age" id="age" class="main__age main__input">
+                        <button type="button" id="generate-age" class="main__age-button main__button">Generate</button>
                     </div>
                     <div class="general__main-documents form-field">
                         <label for="documents" class="main__documents-label main__label">Documents</label>
                         <input type="text" name="documents" id="documents" class="main__documents-input main__input">
-                        <button class="main__documents-button main__button">Generate</button>
+                        <button type="button" id="generate-documents" class="main__documents-button main__button">Generate</button>
                     </div>
                     <div class="general__main-englishLevel form-field">
                         <label for="englishLevel" class="main__englishLevel-label main__label">English level</label>
                         <input type="text" name="englishLevel" id="englishLevel" class="main__englishLevel-input main__input">
-                        <button class="main__englishLevel-button main__button">Generate</button>
+                        <button type="button" id="generate-englishLevel" class="main__englishLevel-button main__button">Generate</button>
                     </div>
                 </form>
                 <div class="general__main-controllPanel form-buttons">
-                    <button class="main__generateAll-button main__button">Generate All</button>
-                    <button class="main__addCandidate-button main__button">Add candidate</button>
-                    <button class="main__addCandidate-button main__button">Init</button>
-                    <button class="main__race-button main__button">Race</button>
-                    <button class="main__clear-button main__button">Clear</button>
+                    <button type="button" id="generateAll" class="main__generateAll main__button">Generate All</button>
+                    <button type="button" id="addCandidate" class="main__addCandidate main__button">Add candidate</button>
+                    <button type="button" id="init" class="main__init main__button">Init</button>
+                    <button type="button" id="race" class="main__race main__button">Race</button>
+                    <button type="button" id="clear" class="main__clear main__button">Clear</button>
                 </div>
             </div>
 
-            <div class="container__race hide">
+            <div id="tab2" class="container__race hide">
                 <div class="general__race check__first">Participants
                     <div class="general__race-block">
-                        <p class="general__race-name">Marina</p>
+                        <p data-participant="1" class="general__race-name">Marina</p>
                         <span class="general__race-participant"></span>
                     </div>
                     <div class="general__race-block">
-                        <p p class="general__race-name">Marina</p>
+                        <p data-participant="2" class="general__race-name">Marina</p>
                         <span class="general__race-participant"></span>
                     </div>
                     <div class="general__race-block">
-                        <p p class="general__race-name">Marina</p>
+                        <p data-participant="3" class="general__race-name">Marina</p>
                         <span class="general__race-participant"></span>
                     </div>
                     <div class="general__race-block">
-                        <p p class="general__race-name">Marina</p>
+                        <p data-participant="4" class="general__race-name">Marina</p>
                         <span class="general__race-participant"></span>
                     </div>
                     <div class="general__race-block">
-                        <p p class="general__race-name">Marina</p>
+                        <p data-participant="5" class="general__race-name">Marina</p>
                         <span class="general__race-participant"></span>
                     </div>
                 </div>
                 <div class="general__race check__second">Balance check
                     <div class="general__race-block">
-                        <p class="general__race-name">Marina</p>
+                        <p data-participant="1" class="general__race-name">Marina</p>
                         <span class="general__race-participant"></span>
                     </div>
                     <div class="general__race-block">
-                        <p p class="general__race-name">Marina</p>
+                        <p data-participant="2" class="general__race-name">Marina</p>
                         <span class="general__race-participant"></span>
                     </div>
                     <div class="general__race-block">
-                        <p p class="general__race-name">Marina</p>
+                        <p data-participant="3" class="general__race-name">Marina</p>
                         <span class="general__race-participant"></span>
                     </div>
                     <div class="general__race-block">
-                        <p p class="general__race-name">Marina</p>
+                        <p data-participant="4" class="general__race-name">Marina</p>
                         <span class="general__race-participant"></span>
                     </div>
                     <div class="general__race-block">
-                        <p p class="general__race-name">Marina</p>
+                        <p data-participant="5" class="general__race-name">Marina</p>
                         <span class="general__race-participant"></span>
                     </div>
                 </div>
                 <div class="general__race check__third">Age check
                     <div class="general__race-block">
-                        <p class="general__race-name">Marina</p>
+                        <p data-participant="1" class="general__race-name">Marina</p>
                         <span class="general__race-participant"></span>
                     </div>
                     <div class="general__race-block">
-                        <p p class="general__race-name">Marina</p>
+                        <p data-participant="2" class="general__race-name">Marina</p>
                         <span class="general__race-participant"></span>
                     </div>
                     <div class="general__race-block">
-                        <p p class="general__race-name">Marina</p>
+                        <p data-participant="3" class="general__race-name">Marina</p>
                         <span class="general__race-participant"></span>
                     </div>
                     <div class="general__race-block">
-                        <p p class="general__race-name">Marina</p>
+                        <p data-participant="4" class="general__race-name">Marina</p>
                         <span class="general__race-participant"></span>
                     </div>
                     <div class="general__race-block">
-                        <p p class="general__race-name">Marina</p>
+                        <p data-participant="5" class="general__race-name">Marina</p>
                         <span class="general__race-participant"></span>
                     </div>
                 </div>
                 <div class="general__race check__four">Documents check
                     <div class="general__race-block">
-                        <p class="general__race-name">Marina</p>
+                        <p data-participant="1" class="general__race-name">Marina</p>
                         <span class="general__race-participant"></span>
                     </div>
                     <div class="general__race-block">
-                        <p p class="general__race-name">Marina</p>
+                        <p data-participant="2" class="general__race-name">Marina</p>
                         <span class="general__race-participant"></span>
                     </div>
                     <div class="general__race-block">
-                        <p p class="general__race-name">Marina</p>
+                        <p data-participant="3" class="general__race-name">Marina</p>
                         <span class="general__race-participant"></span>
                     </div>
                     <div class="general__race-block">
-                        <p p class="general__race-name">Marina</p>
+                        <p data-participant="4" class="general__race-name">Marina</p>
                         <span class="general__race-participant"></span>
                     </div>
                     <div class="general__race-block">
-                        <p p class="general__race-name">Marina</p>
+                        <p data-participant="5" class="general__race-name">Marina</p>
                         <span class="general__race-participant"></span>
                     </div>
                 </div>
                 <div class="general__race check__five">English level check
                     <div class="general__race-block">
-                        <p class="general__race-name">Marina</p>
+                        <p data-participant="1" class="general__race-name">Marina</p>
                         <span class="general__race-participant"></span>
                         <p class="general__race-winner"></p>
                     </div>
                     <div class="general__race-block">
-                        <p p class="general__race-name">Marina</p>
+                        <p data-participant="2" class="general__race-name">Marina</p>
                         <span class="general__race-participant"></span>
                         <p class="general__race-winner"></p>
                     </div>
                     <div class="general__race-block">
-                        <p p class="general__race-name">Marina</p>
+                        <p data-participant="3" class="general__race-name">Marina</p>
                         <span class="general__race-participant"></span>
                         <p class="general__race-winner"></p>
                     </div>
                     <div class="general__race-block">
-                        <p p class="general__race-name">Marina</p>
+                        <p data-participant="4" class="general__race-name">Marina</p>
                         <span class="general__race-participant"></span>
-                        <p class="general__race-winner"></p>
+                        <p data-participant="1" class="general__race-winner"></p>
                     </div>
                     <div class="general__race-block">
-                        <p p class="general__race-name">Marina</p>
+                        <p data-participant="1" class="general__race-name">Marina</p>
                         <span class="general__race-participant"></span>
                         <p class="general__race-winner"></p>
                     </div>
