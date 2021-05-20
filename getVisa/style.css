@@ -38,7 +38,7 @@
 .general__header-icon {
   position: absolute;
   left: 0;
-  color: yellow;
+  color: #ffa600;
   font-size: 60px;
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
@@ -114,7 +114,7 @@
 .general__race-participant {
   width: 80px;
   height: 80px;
-  border: 2px solid green;
+  border: 2px solid #ffa9f8;
   border-radius: 50%;
 }
 
