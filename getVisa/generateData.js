@@ -55,19 +55,42 @@ export default function generateData() {
         element.value = names[random];
     }
     function randBalance(element) {
-        random = Math.ceil(Math.random() * 4000);
+        let random = 0;
+        if (Math.random() > 0.4) {
+            random = Math.floor(Math.random() * 20001);
+        } else {
+            random = Math.floor(Math.random() * (1999 - 0 + 1) + 0);
+        }
+        // random = Math.ceil(Math.random() * 2000);
         element.value = random;
     }
     function randAge(element) {
-        random = Math.ceil(Math.random() * 123);
+        // random = Math.ceil(Math.random() * 123);
+        let random = 0;
+        if (Math.random() > 0.3) {
+            random = Math.floor(Math.random() * (60 - 18 + 1) + 18);
+        } else {
+            random = Math.floor(Math.random() * (90 - 60 + 1) + 60);
+        }
         element.value = random;
     }
     function randDocs(element) {
-        random = Math.floor(Math.random() * 3 + 1);
+        // random = Math.floor(Math.random() * 3 + 1);
+        let random = 0;
+        if (Math.random() > 0.2) {
+            random = 3;
+        } else {
+            random = Math.floor(Math.random() * (2 - 1 + 1) + 1);
+        }
         element.value = random;
     }
     function randEnglishLevel(element, levels) {
-        random = Math.floor(Math.random() * 6);
+        let random = 0;
+        if (Math.random() > 0.7) {
+            random = 6;
+        } else {
+            random = Math.floor(Math.random() * (5 - 0 + 1) + 0);
+        }
         element.value = levels[random];
     }
     function clearData() {
