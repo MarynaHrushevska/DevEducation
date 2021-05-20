@@ -35,7 +35,6 @@ export default function addCandidate(participants) {
         fillIn(increment, tableData, tableId, newPerson);
         increment++;
         console.log(participants);
-
         clearData();
     })
     clear.addEventListener('click', () => {
