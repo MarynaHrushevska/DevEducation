@@ -23,27 +23,27 @@
                     <div class="general__main-name form-field">
                         <label for="name" class="main__name-label main__label">Name</label>
                         <input type="text" name="name" id="name" class="main__name-input main__input">
-                        <button id="generate-name" type="button" class="main__name-button main__button">Generate</button>
+                        <button id="generate-name" type="button" class="main__name-button main__button form-button">Generate</button>
                     </div>
                     <div class="general__main-balance form-field">
                         <label for="balance" class="main__balance-label main__label">Balance</label>
                         <input type="number" name="balance" id="balance" class="main__balance main__input">
-                        <button type="button" id="generate-balance" class="main__balance-button main__button">Generate</button>
+                        <button type="button" id="generate-balance" class="main__balance-button main__button form-button">Generate</button>
                     </div>
                     <div class="general__main-age form-field">
                         <label for="age" class="main__age-label main__label">Age</label>
                         <input type="number" name="age" id="age" class="main__age main__input">
-                        <button type="button" id="generate-age" class="main__age-button main__button">Generate</button>
+                        <button type="button" id="generate-age" class="main__age-button main__button form-button">Generate</button>
                     </div>
                     <div class="general__main-documents form-field">
                         <label for="documents" class="main__documents-label main__label">Documents</label>
-                        <input type="text" name="documents" id="documents" class="main__documents-input main__input">
-                        <button type="button" id="generate-documents" class="main__documents-button main__button">Generate</button>
+                        <input type="number" name="documents" id="documents" class="main__documents-input main__input">
+                        <button type="button" id="generate-documents" class="main__documents-button main__button form-button">Generate</button>
                     </div>
                     <div class="general__main-englishLevel form-field">
                         <label for="englishLevel" class="main__englishLevel-label main__label">English level</label>
                         <input type="text" name="englishLevel" id="englishLevel" class="main__englishLevel-input main__input">
-                        <button type="button" id="generate-englishLevel" class="main__englishLevel-button main__button">Generate</button>
+                        <button type="button" id="generate-englishLevel" class="main__englishLevel-button main__button form-button">Generate</button>
                     </div>
                 </form>
                 <div class="general__main-controllPanel form-buttons">
@@ -52,6 +52,55 @@
                     <button type="button" id="init" class="main__init main__button">Init</button>
                     <button type="button" id="race" class="main__race main__button">Race</button>
                     <button type="button" id="clear" class="main__clear main__button">Clear</button>
+                </div>
+
+                <div id='table' class="general__main-table hide">
+                    <table class="table">
+                        <thead class="table__thead">
+                            <tr class="table__thead-row">
+                                <th class="table__thead-th"></th>
+                                <th class="table__thead-th" data-table="namePerson" data-id="1"></th>
+                                <th class="table__thead-th" data-table="namePerson" data-id="2"></th>
+                                <th class="table__thead-th" data-table="namePerson" data-id="3"></th>
+                                <th class="table__thead-th" data-table="namePerson" data-id="4"></th>
+                                <th class="table__thead-th" data-table="namePerson" data-id="5"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="table__tbody">
+                            <tr>
+                                <th class="table__tbody-td">Balance</td>
+                                <td class="table__tbody-td" data-table="balance" data-id="1"></td>
+                                <td class="table__tbody-td" data-table="balance" data-id="2"></td>
+                                <td class="table__tbody-td" data-table="balance" data-id="3"></td>
+                                <td class="table__tbody-td" data-table="balance" data-id="4"></td>
+                                <td class="table__tbody-td" data-table="balance" data-id="5"></td>
+                            </tr>
+                            <tr>
+                                <th class="table__tbody-td">Age</td>
+                                <td class="table__tbody-td" data-table="age" data-id="1"></td>
+                                <td class="table__tbody-td" data-table="age" data-id="2"></td>
+                                <td class="table__tbody-td" data-table="age" data-id="3"></td>
+                                <td class="table__tbody-td" data-table="age" data-id="4"></td>
+                                <td class="table__tbody-td" data-table="age" data-id="5"></td>
+                            </tr>
+                            <tr>
+                                <th class="table__tbody-td">Documents</td>
+                                <td class="table__tbody-td" data-table="documents" data-id="1"></td>
+                                <td class="table__tbody-td" data-table="documents" data-id="2"></td>
+                                <td class="table__tbody-td" data-table="documents" data-id="3"></td>
+                                <td class="table__tbody-td" data-table="documents" data-id="4"></td>
+                                <td class="table__tbody-td" data-table="documents" data-id="5"></td>
+                            </tr>
+                            <tr>
+                                <th class="table__tbody-td">English</td>
+                                <td class="table__tbody-td" data-table="english" data-id="1"></td>
+                                <td class="table__tbody-td" data-table="english" data-id="2"></td>
+                                <td class="table__tbody-td" data-table="english" data-id="3"></td>
+                                <td class="table__tbody-td" data-table="english" data-id="4"></td>
+                                <td class="table__tbody-td" data-table="english" data-id="5"></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 

@@ -9,7 +9,9 @@ export default function generateData() {
     const age = document.getElementById('generate-age');
     const documents = document.getElementById('generate-documents');
     const englishLevel = document.getElementById('generate-englishLevel');
+    const addCandidate = document.getElementById('addCandidate');
     const generateAll = document.getElementById('generateAll');
+    const generateButton = document.querySelectorAll('.form-button');
 
     let random;
 
@@ -18,18 +20,23 @@ export default function generateData() {
 
     name.addEventListener('click' , () => {
         randName(nameInput, names);
+        // name.disabled = true;
     })
     balance.addEventListener('click' , () => {
         randBalance(balanceInput);
+        // balance.disabled = true;
     })
     age.addEventListener('click' , () => {
         randAge(ageInput);
+        // age.disabled = true;
     })
     documents.addEventListener('click' , () => {
         randDocs(documentsInput);
+        // documents.disabled = true;
     })
     englishLevel.addEventListener('click' , () => {
         randEnglishLevel(englishLevelInput, english);
+        // englishLevel.disabled = true;
     })
     generateAll.addEventListener('click', () => {
         randName(nameInput, names);
@@ -37,7 +44,12 @@ export default function generateData() {
         randAge(ageInput);
         randDocs(documentsInput);
         randEnglishLevel(englishLevelInput, english);
+        addCandidate.disabled = false;
+        for (let i of generateButton) {
+            i.disabled = false;
+        }
     })
+
     function randName(element, names) {
         random = Math.floor(Math.random() * 10);
         element.value = names[random];
@@ -57,5 +69,13 @@ export default function generateData() {
     function randEnglishLevel(element, levels) {
         random = Math.floor(Math.random() * 6);
         element.value = levels[random];
+    }
+    function clearData() {
+        nameInput.value = ''; 
+        balanceInput.value = ''; 
+        ageInput.value = ''; 
+        documentsInput.value = ''; 
+        englishLevelInput.value = '';
+        addCandidate.disabled = true;
     }
 }
