@@ -1,4 +1,4 @@
-export default function addCandidate() {
+export default function addCandidate(participants) {
     const nameInput = document.getElementById('name');
     const balanceInput = document.getElementById('balance');
     const ageInput = document.getElementById('age');
@@ -15,8 +15,6 @@ export default function addCandidate() {
     race.disabled = true;
     addCandidate.disabled = true;
     let increment = 1;
-    console.log(inputs);
-    let participants = [];
     let newParticipant = {};
     let newPerson;
 
@@ -36,7 +34,8 @@ export default function addCandidate() {
         participants.push(newPerson);
         fillIn(increment, tableData, tableId, newPerson);
         increment++;
-        console.log(participants)
+        console.log(participants);
+
         clearData();
     })
     clear.addEventListener('click', () => {

@@ -184,7 +184,6 @@
   width: 80%;
   height: 721px;
   margin: 0 auto;
-  border: 1px solid yellow;
 }
 
 .form-field {
@@ -344,5 +343,10 @@
   width: 10%;
   height: 60px;
   text-align: center;
+}
+
+.race__name {
+  position: absolute;
+  left: -30px;
 }
 /*# sourceMappingURL=style.css.map */
