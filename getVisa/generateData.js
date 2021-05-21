@@ -20,23 +20,18 @@ export default function generateData() {
 
     name.addEventListener('click' , () => {
         randName(nameInput, names);
-        // name.disabled = true;
     })
     balance.addEventListener('click' , () => {
         randBalance(balanceInput);
-        // balance.disabled = true;
     })
     age.addEventListener('click' , () => {
         randAge(ageInput);
-        // age.disabled = true;
     })
     documents.addEventListener('click' , () => {
         randDocs(documentsInput);
-        // documents.disabled = true;
     })
     englishLevel.addEventListener('click' , () => {
         randEnglishLevel(englishLevelInput, english);
-        // englishLevel.disabled = true;
     })
     generateAll.addEventListener('click', () => {
         randName(nameInput, names);
@@ -61,11 +56,9 @@ export default function generateData() {
         } else {
             random = Math.floor(Math.random() * (1999 - 0 + 1) + 0);
         }
-        // random = Math.ceil(Math.random() * 2000);
         element.value = random;
     }
     function randAge(element) {
-        // random = Math.ceil(Math.random() * 123);
         let random = 0;
         if (Math.random() > 0.3) {
             random = Math.floor(Math.random() * (60 - 18 + 1) + 18);
@@ -75,7 +68,6 @@ export default function generateData() {
         element.value = random;
     }
     function randDocs(element) {
-        // random = Math.floor(Math.random() * 3 + 1);
         let random = 0;
         if (Math.random() > 0.2) {
             random = 3;
@@ -89,7 +81,7 @@ export default function generateData() {
         if (Math.random() > 0.7) {
             random = 6;
         } else {
-            random = Math.floor(Math.random() * (5 - 0 + 1) + 0);
+            random = Math.ceil(Math.random() * (5 - 0) + 0);
         }
         element.value = levels[random];
     }

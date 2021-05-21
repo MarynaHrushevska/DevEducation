@@ -28,7 +28,6 @@ export default function startRace(participants) {
     const english3 = document.querySelector('.english3');
     const english4 = document.querySelector('.english4');
     const english5 = document.querySelector('.english5');
-    // const rndInt = randomIntFromInterval(5, 10);
 
     race.addEventListener('click', () => {
         raceTable.classList.remove('hide');
@@ -113,5 +112,4 @@ export default function startRace(participants) {
     function randomIntFromInterval(min, max) {
         return (Math.floor(Math.random() * (max - min + 1) + min)) * 1000;
     }
-      
 }
