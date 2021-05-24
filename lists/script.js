@@ -1,5 +1,6 @@
-'use strict';
-// ArrayList 7 - 225;
+// ArrayList 7 - 209;
+// LinkedList 212 - 374;
+
 var arr = [1,2,3,4,5,6,7];
 var IList = function (capacity) {
     this.capacity = capacity;
@@ -199,21 +200,6 @@ ArrayList.prototype.retainAll = function (value) {
     }
 }
 ArrayList.prototype.sort = function () {
-    // if (this.array.length < 2) {
-    //     return this.array;
-    // }
-    // var pivot = this.array[0];
-    // var firstArr = [];
-    // var secondArr = [];
-    // for (var i = 1; i < this.array.length; i++) {
-    //     if (this.array[i] <= pivot) {
-    //         firstArr[firstArr.length] = this.array[i];
-    //     } else {
-    //         secondArr[secondArr.length] = this.array[i];
-    //     }
-    // }
-    // var result = this.sort(firstArr).concat(pivot, this.sort(secondArr));
-    // return result;
     return this.array.sort();
 }
 ArrayList.prototype.print = function () {
@@ -222,4 +208,169 @@ ArrayList.prototype.print = function () {
     }
 }
 
-module.exports = { ArrayList };
+console.log('-------------- Linked List ----------------');
+
+var LinkedList = function () {
+    this.size = 0;
+    this.root = null;
+    this.Node = function (value) {
+        this.value = value;
+        this.next = null;
+    }
+};
+LinkedList.prototype = Object.create(IList.prototype);
+LinkedList.prototype.constructor = LinkedList;
+
+LinkedList.prototype.clear = function () {
+    this.size = 0;
+    this.root = null;
+};
+LinkedList.prototype.getSize = function () {
+    return this.size;
+};
+LinkedList.prototype.add = function (value) {
+    var newNode = new this.Node(value);
+    this.size++;
+    if (this.root === null) {
+        this.root = newNode;
+    } else {
+        var tempNode = this.root;
+        while (tempNode.next !== null) {
+            tempNode = tempNode.next;
+        }
+        tempNode.next = newNode;
+    }
+};
+LinkedList.prototype.remove = function (value) {
+    if (this.root === null) {
+        return;
+    }
+    var tempNode = this.root;
+    if (tempNode.value === value) {
+        var removeValue = tempNode.value;
+        this.root = tempNode.next;
+        this.size--;
+        return removeValue;
+    }
+    while (tempNode.next !== null) {
+        if (tempNode.next.value === value) {
+            var removedNode = tempNode.next;
+            tempNode.next = tempNode.next.next;
+            this.size--;
+            return removedNode.value;
+        } else {
+            tempNode = tempNode.next;
+        }
+    }
+};
+LinkedList.prototype.toArray = function () {
+    var array = new Array(this.size);
+    var index = 0;
+    var tempNode = this.root;
+    while (tempNode !== null) {
+        array[index++] = tempNode.value;
+        tempNode = tempNode.next;
+    }
+    return array;
+};
+LinkedList.prototype.get = function (value) {
+    var tempNode = this.root;
+    var index = -1;
+    while (tempNode) {
+        index++;
+        if (tempNode.value === value) {
+            return index;
+        }
+        tempNode = tempNode.next;
+    }
+    return -1;
+}
+LinkedList.prototype.set = function (value, index) {
+    var newNode = new this.Node(value);
+    var tempNode = this.root;
+    var previousNode;
+    var currentIndex = 0;
+    if (index > this.size) {
+        return false;
+    }
+    if (index === 0) {
+        newNode.next = tempNode;
+        this.root = newNode;
+    } else {
+        while (currentIndex < index) {
+            currentIndex++;
+            previousNode = tempNode;
+            tempNode = tempNode.next;
+        }
+        newNode.next = tempNode;
+        previousNode.next = newNode;
+    }
+    this.size++;
+}
+LinkedList.prototype.contains = function (value) {
+    var tempNode = this.root;
+    while (tempNode.next !== null) {
+        if (tempNode.value === value) {
+            return true;
+        }
+        tempNode = tempNode.next;
+    }
+    return false;
+}
+LinkedList.prototype.minValue = function () {
+    var tempNode = this.root;
+    var tempMin = tempNode.value;
+    for (var i = 0; i < this.size; i++) {
+        if (tempNode.value < tempMin) {
+            tempMin = tempNode.value;
+        }
+        tempNode = tempNode.next;
+    }
+    return tempMin;
+}
+LinkedList.prototype.maxValue = function () {
+    var tempNode = this.root;
+    var tempMax = tempNode.value;
+    for (var i = 0; i < this.size; i++) {
+        if (tempNode.value > tempMax) {
+            tempMax = tempNode.value;
+        }
+        tempNode = tempNode.next;
+    }
+    return tempMax;
+}
+LinkedList.prototype.minIndex = function () {
+    var tempNode = this.root;
+    var tempMin = tempNode.value;
+    var currentIndex;
+    for (var i = 0; i < this.size; i++) {
+        if (tempNode.value < tempMin) {
+            tempMin = tempNode.value;
+            currentIndex = i;
+        }
+        tempNode = tempNode.next;
+    }
+    return currentIndex;
+}
+LinkedList.prototype.maxIndex = function () {
+    var tempNode = this.root;
+    var tempMax = tempNode.value;
+    var currentIndex;
+    for (var i = 0; i < this.size; i++) {
+        if (tempNode.value > tempMax) {
+            tempMax = tempNode.value;
+            currentIndex = i;
+        }
+        tempNode = tempNode.next;
+    }
+    return currentIndex;
+}
+LinkedList.prototype.print = function () {
+    var tempNode = this.root;
+    for (var i = 0; i < this.size; i++) {
+        console.log(tempNode.value);
+        tempNode = tempNode.next;
+    }
+}
+
+module.exports = { ArrayList, LinkedList };
