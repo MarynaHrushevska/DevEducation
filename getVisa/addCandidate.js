@@ -12,12 +12,29 @@ export default function addCandidate(participants) {
     const tableData = document.querySelectorAll('[data-table]');
     const tableId = document.querySelectorAll('[data-id]');
     const inputs = document.querySelectorAll('.main__input');
+    const sun = document.getElementById('sun');
+    const initializationTable = document.getElementById('tab1');
+    const raceTable = document.getElementById('tab2');
+
     race.disabled = true;
     addCandidate.disabled = true;
     let increment = 1;
     let newParticipant = {};
     let newPerson;
 
+    sun.addEventListener('dblclick', () => {
+        raceTable.classList.add('hide');
+        initializationTable.classList.remove('hide');
+
+        participants = [];
+        clearData();
+        generateAll.disabled = false;
+        blockGenerate(generateButton, false);
+        for (let d of tableData) {
+            d.textContent = '';
+        }
+        increment = 1;
+    })
     for (let a of inputs) {
         a.addEventListener('change', () => {
             checkInputs();
@@ -34,7 +51,6 @@ export default function addCandidate(participants) {
         participants.push(newPerson);
         fillIn(increment, tableData, tableId, newPerson);
         increment++;
-        console.log(participants);
         clearData();
     })
     clear.addEventListener('click', () => {

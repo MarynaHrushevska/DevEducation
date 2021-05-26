@@ -26,6 +26,11 @@
             font-size: 60px;
             transform: rotate(360deg);
             transition-duration: transform 2s;
+            cursor: pointer;
+            &:hover {
+                transform: scale(1.5);
+                transition: transform 2s ease; 
+            }
         }
     }
     &__main {
@@ -250,4 +255,14 @@
     position: absolute;
     left: -30px;
     }
+}
+
+
+.success-check {
+    border: 2px solid green;
+
+}
+
+.fail-check {
+    border: 2px solid red;
 }

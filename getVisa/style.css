@@ -44,6 +44,16 @@
           transform: rotate(360deg);
   -webkit-transition-duration: transform 2s;
           transition-duration: transform 2s;
+  cursor: pointer;
+}
+
+.general__header-icon:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-transition: -webkit-transform 2s ease;
+  transition: -webkit-transform 2s ease;
+  transition: transform 2s ease;
+  transition: transform 2s ease, -webkit-transform 2s ease;
 }
 
 .general__main {
@@ -348,5 +358,13 @@
 .race__name {
   position: absolute;
   left: -30px;
+}
+
+.success-check {
+  border: 2px solid green;
+}
+
+.fail-check {
+  border: 2px solid red;
 }
 /*# sourceMappingURL=style.css.map */

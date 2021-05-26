@@ -78,8 +78,8 @@ export default function generateData() {
     }
     function randEnglishLevel(element, levels) {
         let random = 0;
-        if (Math.random() > 0.7) {
-            random = 6;
+        if (Math.random() > 0.3) {
+            random = 2 || 3 || 4;
         } else {
             random = Math.ceil(Math.random() * (5 - 0) + 0);
         }
