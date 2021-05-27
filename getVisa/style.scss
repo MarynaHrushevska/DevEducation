@@ -256,13 +256,17 @@
     left: -30px;
     }
 }
-
-
 .success-check {
     border: 2px solid green;
 
 }
-
 .fail-check {
     border: 2px solid red;
+}
+.noWin {
+    position: absolute;
+    bottom: 110px;
+    color: red;
+    right: 50%;
+    font-size: 31px;
 }

@@ -15,12 +15,23 @@ export default function addCandidate(participants) {
     const sun = document.getElementById('sun');
     const initializationTable = document.getElementById('tab1');
     const raceTable = document.getElementById('tab2');
+    const nowon = document.querySelector('.noWin');
+    const winner = document.querySelectorAll('.general__race-winner');
+
+    const namePerson = document.querySelectorAll('.namePerson');
+    const balancePerson = document.querySelectorAll('.balancePerson');
+    const agePerson = document.querySelectorAll('.agePerson');
+    const documentsPerson = document.querySelectorAll('.documentsPerson');
+    const englishPerson = document.querySelectorAll('.englishPerson');
+    const circle = document.querySelectorAll('.general__race-participant');
+    // console.log(circle)
 
     race.disabled = true;
     addCandidate.disabled = true;
     let increment = 1;
     let newParticipant = {};
     let newPerson;
+    let i = 0;
 
     sun.addEventListener('dblclick', () => {
         raceTable.classList.add('hide');
@@ -34,6 +45,11 @@ export default function addCandidate(participants) {
             d.textContent = '';
         }
         increment = 1;
+        i = 0;
+        nowon.classList.add('hide');
+        circle.forEach((cir) => {
+            cir.style.border = '2px solid rgb(255, 169, 248)';
+        })
     })
     for (let a of inputs) {
         a.addEventListener('change', () => {
@@ -49,9 +65,12 @@ export default function addCandidate(participants) {
         }
         newPerson = recordCandidate(nameInput.value, balanceInput.value, ageInput.value, documentsInput.value, englishLevelInput.value, addCandidate);
         participants.push(newPerson);
-        fillIn(increment, tableData, tableId, newPerson);
+        fillIn(i++, newPerson);
         increment++;
         clearData();
+        winner.forEach((win) => {
+            win.textContent = '';
+        })
     })
     clear.addEventListener('click', () => {
         participants = [];
@@ -61,35 +80,19 @@ export default function addCandidate(participants) {
         for (let d of tableData) {
             d.textContent = '';
         }
-        increment = 1;
+        increment = 0;
     })
-    function fillIn(inc, data, index, person) {
-        let dataValue; 
-        let dataIdValue;
-        for (let td of data) { 
-            for (let tdId of index) {
-                dataValue = td.dataset.table;
-                dataIdValue = tdId.dataset.id;
-                
-                if (dataIdValue === inc.toString()) {
-                    if (dataValue === 'namePerson') {
-                        tdId.textContent = person.name;
-                    }
-                    if (dataValue === 'balance') {
-                        td.textContent = person.balance; 
-                    }
-                    if (dataValue === 'age') {
-                        td.textContent = person.age; 
-                    }
-                    if (dataValue === 'documents') {
-                        td.textContent = person.documents; 
-                    }
-                    if (dataValue === 'english') {
-                        td.textContent = person.english; 
-                    }
-                }
-            }
-        } 
+    for (let generate of generateButton) {
+        generate.addEventListener('click', () => {
+            checkInputs();
+        })
+    }
+    function fillIn(i, person) {
+        namePerson[i].textContent = person.name;
+        balancePerson[i].textContent = person.balance;
+        agePerson[i].textContent = person.age;
+        documentsPerson[i].textContent = person.documents;
+        englishPerson[i].textContent = person.english;
     }
     function recordCandidate(name, balance, age, docs, english, element) {
         if (participants.length === 5) {

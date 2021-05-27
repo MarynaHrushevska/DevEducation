@@ -367,4 +367,12 @@
 .fail-check {
   border: 2px solid red;
 }
+
+.noWin {
+  position: absolute;
+  bottom: 110px;
+  color: red;
+  right: 50%;
+  font-size: 31px;
+}
 /*# sourceMappingURL=style.css.map */
