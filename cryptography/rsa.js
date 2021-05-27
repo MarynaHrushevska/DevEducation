@@ -1,11 +1,13 @@
 'use strict';
 
+var c = 10;
+
 function rsa (p,q) {    
     var n = p * q;
     var eulerFunction = (p - 1) * (q - 1);
-    console.log(eulerFunction);
-    var e = Math.round(Math.random() * eulerFunction);
-    var d = Math.round((1 + eulerFunction) / e);
+    var e = 5;
+    var k = 2;
+    var d = (eulerFunction * k + 1) / e;
     var keys = {
         'e': e,
         'd': d,
@@ -13,7 +15,31 @@ function rsa (p,q) {
     }
     return keys;
 }
-console.log(rsa(8,9));
+var keys = rsa(13, 7);
+
+function encoded(openKey, fn) {
+    var {e, n} = fn;
+    var encoded = (openKey ** e) % n;
+    return encoded;
+}
+var encode = encoded(c, keys);
+
+
+function decoded(fn, enc) {
+    var {d, n} = fn;
+    var encode = enc;
+    var decoded = Math.pow(encode, d) % n;
+    return decoded;
+}
+
+
+
+
+
+
+
+
+
 function twoNumberMutuallySimple (a, b) {
     var dividerA = mutuallySimple(a);
     var dividerB = mutuallySimple(b);
@@ -45,16 +71,3 @@ function generateNumbers (p, q) {
         generateNumbers();
     }
 }
-
-
-function encoded (m,e,n) {
-    var C = Math.pow(m,e) % n;
-    return C;
-}
-console.log(encoded(46, 72))
-
-function decoded (m,d,n) {
-    var C = Math.pow(m,d) % n;
-    return C;
-}
-console.log(decoded(46, 1))
