@@ -1,5 +1,5 @@
 // import startRace from './startRace';
-const startRace = require('./startRace');
+const startRace = require('../modules/startRace');
 
 describe('startRace', function() {
     it('startRace should be defined', function() {
