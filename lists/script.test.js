@@ -236,13 +236,29 @@ describe('LinkedList', function() {
         expect(llist.maxValue()).toBe(expectedValue);
         llist.clear(); 
     })
-    it('should return min index', function() {
+    it("should reverse", function () {
         var llist = new LinkedList();
-        llist.add(19);
-        llist.add(14);
-        llist.add(111);
-        var expectedValue = 1;
-        expect(llist.minIndex()).toBe(expectedValue);
+        var testArray = [3, 2, 1];
+        var testRoot = {
+            value: 3,
+            next: {
+            value: 2,
+            next: {
+                value: 1,
+                next: null,
+            },
+            },
+        };
+        llist.__reverseList = jest.fn().mockReturnValue(testRoot);
+        llist.add(1);
+        llist.add(2);
+        llist.add(3);
+        var oldArray = llist.toArray();
+        llist.reverse();
+        expect(llist.__reverseList).toHaveBeenCalledTimes(1);
+        expect(llist.toArray()).toEqual(testArray);
+        expect(llist.toArray()).not.toEqual(oldArray);
+        expect(llist.root).toEqual(testRoot);
         llist.clear(); 
     })
     it('should return max index', function() {
@@ -254,4 +270,22 @@ describe('LinkedList', function() {
         expect(llist.maxIndex()).toBe(expectedValue);
         llist.clear(); 
     })
+    it("should return string of linkedList items values", function () {
+        var llist = new LinkedList();
+        llist.add(1);
+        llist.add(2);
+        llist.add(3);
+        llist.add(4);
+        llist.add(5);
+        var testString = "1,2,3,4,5";
+        expect(llist.toString()).toBe(testString);
+        llist.clear(); 
+    });
+    it("should remove all elements", function () {
+        var llist = new LinkedList();
+        llist.add(1);
+        llist.add(2);
+        expect(llist.removeAll([])).toBe();
+        llist.clear();
+    });
 })

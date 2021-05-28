@@ -372,5 +372,65 @@ LinkedList.prototype.print = function () {
         tempNode = tempNode.next;
     }
 }
+LinkedList.prototype.reverse = function () {
+    if (this.root === null) {
+        return;
+    }
+    this.root = this.__reverseList(this.root);
+}
+LinkedList.prototype.toString = function () {
+    if (this.size === 0) {
+      return "";
+    }
+    var string = "";
+    var tempNode = this.root;
+    while (tempNode !== null) {
+      string += tempNode.value;
+      if (tempNode.next === null) {
+        break;
+      }
+      string += ",";
+      tempNode = tempNode.next;
+    }
+    return string;
+};
+LinkedList.prototype.removeAll = function (array) {
+    if (array.length < 1 || !Array.isArray(array)) {
+      return;
+    }
+    for (var i = 0; i < array.length; i++) {
+      if (!this.contains(array[i]) || array[i] === undefined) {
+        continue;
+      }
+      var tempNode = this.root;
+      while (tempNode !== null) {
+        if (tempNode.value === array[i]) {
+          this.remove(array[i]);
+        }
+        tempNode = tempNode.next;
+      }
+    }
+};
+LinkedList.prototype.retainAll = function (array) {
+    var size = this.size;
+    var tempArray = [];
+    for (var i = 0; i < size; i++) {
+      var tempNode = this.root;
+      while (tempNode !== null) {
+        if (tempNode.value !== array[i]) {
+          tempArray.push(tempNode.value);
+        }
+        tempNode = tempNode.next;
+      }
+    }
+    for (var j = 0; j < tempArray.length; j++) {
+      for (var k = 0; k < array.length; k++) {
+        if (array[k] === tempArray[j]) {
+          tempArray[j] = undefined;
+        }
+      }
+    }
+    this.removeAll(tempArray);
+};
 
 module.exports = { ArrayList, LinkedList };
