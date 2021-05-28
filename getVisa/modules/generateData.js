@@ -19,37 +19,39 @@ export default function generateData() {
     const english = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 
     name.addEventListener('click' , () => {
-        randName(nameInput, names);
+        genDataHelp.randName(nameInput, names);
     })
     balance.addEventListener('click' , () => {
-        randBalance(balanceInput);
+        genDataHelp.randBalance(balanceInput);
     })
     age.addEventListener('click' , () => {
-        randAge(ageInput);
+        genDataHelp.randAge(ageInput);
     })
     documents.addEventListener('click' , () => {
-        randDocs(documentsInput);
+        genDataHelp.randDocs(documentsInput);
     })
     englishLevel.addEventListener('click' , () => {
-        randEnglishLevel(englishLevelInput, english);
+        genDataHelp.randEnglishLevel(englishLevelInput, english);
     })
     generateAll.addEventListener('click', () => {
-        randName(nameInput, names);
-        randBalance(balanceInput);
-        randAge(ageInput);
-        randDocs(documentsInput);
-        randEnglishLevel(englishLevelInput, english);
+        genDataHelp.randName(nameInput, names);
+        genDataHelp.randBalance(balanceInput);
+        genDataHelp.randAge(ageInput);
+        genDataHelp.randDocs(documentsInput);
+        genDataHelp.randEnglishLevel(englishLevelInput, english);
         addCandidate.disabled = false;
         for (let i of generateButton) {
             i.disabled = false;
         }
     })
+}
 
-    function randName(element, names) {
-        random = Math.floor(Math.random() * 10);
+export const genDataHelp = {
+    randName(element, names) {
+        let random = Math.floor(Math.random() * 10);
         element.value = names[random];
-    }
-    function randBalance(element) {
+    },
+    randBalance(element) {
         let random = 0;
         if (Math.random() > 0.4) {
             random = Math.floor(Math.random() * 20001);
@@ -57,8 +59,8 @@ export default function generateData() {
             random = Math.floor(Math.random() * (1999 - 0 + 1) + 0);
         }
         element.value = random;
-    }
-    function randAge(element) {
+    },
+    randAge(element) {
         let random = 0;
         if (Math.random() > 0.3) {
             random = Math.floor(Math.random() * (60 - 18 + 1) + 18);
@@ -66,8 +68,8 @@ export default function generateData() {
             random = Math.floor(Math.random() * (90 - 60 + 1) + 60);
         }
         element.value = random;
-    }
-    function randDocs(element) {
+    },
+    randDocs(element) {
         let random = 0;
         if (Math.random() > 0.2) {
             random = 3;
@@ -75,8 +77,8 @@ export default function generateData() {
             random = Math.floor(Math.random() * (2 - 1 + 1) + 1);
         }
         element.value = random;
-    }
-    function randEnglishLevel(element, levels) {
+    },
+    randEnglishLevel(element, levels) {
         let random = 0;
         if (Math.random() > 0.3) {
             random = 2 || 3 || 4;
@@ -84,8 +86,8 @@ export default function generateData() {
             random = Math.ceil(Math.random() * (5 - 0) + 0);
         }
         element.value = levels[random];
-    }
-    function clearData() {
+    },
+    clearData() {
         nameInput.value = ''; 
         balanceInput.value = ''; 
         ageInput.value = ''; 

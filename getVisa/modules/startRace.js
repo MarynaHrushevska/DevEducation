@@ -13,22 +13,22 @@ export default function startRace(participants) {
     race.addEventListener('click', () => {
         raceTable.classList.remove('hide');
         initializationTable.classList.add('hide');
-        assignNames(part[0], participants[0].name);
-        assignNames(part[1], participants[1].name);
-        assignNames(part[2], participants[2].name);
-        assignNames(part[3], participants[3].name);
-        assignNames(part[4], participants[4].name);
+        helpers.assignNames(part[0], participants[0].name);
+        helpers.assignNames(part[1], participants[1].name);
+        helpers.assignNames(part[2], participants[2].name);
+        helpers.assignNames(part[3], participants[3].name);
+        helpers.assignNames(part[4], participants[4].name);
 
         Promise.any([
             Promise.all(
                 [
-                    accCheck(checkAcc, participants[0].balance, randomIntFromInterval(5, 10), balances[0]),
-                    accCheck(checkAge, participants[0].age, randomIntFromInterval(1, 3), ages[0]),
-                    accCheck(checkDocs, participants[0].documents, randomIntFromInterval(10, 20), docs[0]),
-                    accCheck(checkLang, participants[0].english, randomIntFromInterval(5, 10), english[0])
+                    helpers.accCheck(helpers.checkAcc, participants[0].balance, helpers.randomIntFromInterval(5, 10), balances[0]),
+                    helpers.accCheck(helpers.checkAge, participants[0].age, helpers.randomIntFromInterval(1, 3), ages[0]),
+                    helpers.accCheck(helpers.checkDocs, participants[0].documents, helpers.randomIntFromInterval(10, 20), docs[0]),
+                    helpers.accCheck(helpers.checkLang, participants[0].english, helpers.randomIntFromInterval(5, 10), english[0])
                 ]
             ).then((results) => {
-                const isWinner = allResultsAreTrue(results);
+                const isWinner = helpers.allResultsAreTrue(results);
 
                 return isWinner ? {
                     participant: participants[0],
@@ -39,13 +39,13 @@ export default function startRace(participants) {
         
             Promise.all(
                 [
-                    accCheck(checkAcc, participants[1].balance, randomIntFromInterval(5, 10), balances[1]),
-                    accCheck(checkAge, participants[1].age, randomIntFromInterval(1, 3), ages[1]),
-                    accCheck(checkDocs, participants[1].documents, randomIntFromInterval(10, 20), docs[1]),
-                    accCheck(checkLang, participants[1].english, randomIntFromInterval(5, 10), english[1])
+                    helpers.accCheck(helpers.checkAcc, participants[1].balance, helpers.randomIntFromInterval(5, 10), balances[1]),
+                    helpers.accCheck(helpers.checkAge, participants[1].age, helpers.randomIntFromInterval(1, 3), ages[1]),
+                    helpers.accCheck(helpers.checkDocs, participants[1].documents, helpers.randomIntFromInterval(10, 20), docs[1]),
+                    helpers.accCheck(helpers.checkLang, participants[1].english, helpers.randomIntFromInterval(5, 10), english[1])
                 ]
             ).then((results) => {
-                const isWinner = allResultsAreTrue(results);
+                const isWinner = helpers.allResultsAreTrue(results);
 
                 return isWinner ? {
                     participant: participants[1],
@@ -56,14 +56,14 @@ export default function startRace(participants) {
 
             Promise.all(
                 [
-                    accCheck(checkAcc, participants[2].balance, randomIntFromInterval(5, 10), balances[2]),
-                    accCheck(checkAge, participants[2].age, randomIntFromInterval(1, 3), ages[2]),
-                    accCheck(checkDocs, participants[2].documents, randomIntFromInterval(10, 20), docs[2]),
-                    accCheck(checkLang, participants[2].english, randomIntFromInterval(5, 10), english[2])
+                    helpers.accCheck(helpers.checkAcc, participants[2].balance, helpers.randomIntFromInterval(5, 10), balances[2]),
+                    helpers.accCheck(helpers.checkAge, participants[2].age, helpers.randomIntFromInterval(1, 3), ages[2]),
+                    helpers.accCheck(helpers.checkDocs, participants[2].documents, helpers.randomIntFromInterval(10, 20), docs[2]),
+                    helpers.accCheck(helpers.checkLang, participants[2].english, helpers.randomIntFromInterval(5, 10), english[2])
                 ]
             )
             .then((results) => {
-                const isWinner = allResultsAreTrue(results);
+                const isWinner = helpers.allResultsAreTrue(results);
 
                 return isWinner ? {
                     participant: participants[2],
@@ -74,14 +74,14 @@ export default function startRace(participants) {
 
             Promise.all(
                 [
-                    accCheck(checkAcc, participants[3].balance, randomIntFromInterval(5, 10), balances[3]),
-                    accCheck(checkAge, participants[3].age, randomIntFromInterval(1, 3), ages[3]),
-                    accCheck(checkDocs, participants[3].documents, randomIntFromInterval(10, 20), docs[3]),
-                    accCheck(checkLang, participants[3].english, randomIntFromInterval(5, 10), english[3])
+                    helpers.accCheck(helpers.checkAcc, participants[3].balance, helpers.randomIntFromInterval(5, 10), balances[3]),
+                    helpers.accCheck(helpers.checkAge, participants[3].age, helpers.randomIntFromInterval(1, 3), ages[3]),
+                    helpers.accCheck(helpers.checkDocs, participants[3].documents, helpers.randomIntFromInterval(10, 20), docs[3]),
+                    helpers.accCheck(helpers.checkLang, participants[3].english, helpers.randomIntFromInterval(5, 10), english[3])
                 ]
             )
             .then((results) => {
-                const isWinner = allResultsAreTrue(results);
+                const isWinner = helpers.allResultsAreTrue(results);
 
                 return isWinner ? {
                     participant: participants[3],
@@ -92,14 +92,14 @@ export default function startRace(participants) {
 
             Promise.all(
                 [
-                    accCheck(checkAcc, participants[4].balance, randomIntFromInterval(5, 10), balances[4]),
-                    accCheck(checkAge, participants[4].age, randomIntFromInterval(1, 3), ages[4]),
-                    accCheck(checkDocs, participants[4].documents, randomIntFromInterval(10, 20), docs[4]),
-                    accCheck(checkLang, participants[4].english, randomIntFromInterval(5, 10), english[4])
+                    helpers.accCheck(helpers.checkAcc, participants[4].balance, helpers.randomIntFromInterval(5, 10), balances[4]),
+                    helpers.accCheck(helpers.checkAge, participants[4].age, helpers.randomIntFromInterval(1, 3), ages[4]),
+                    helpers.accCheck(helpers.checkDocs, participants[4].documents, helpers.randomIntFromInterval(10, 20), docs[4]),
+                    helpers.accCheck(helpers.checkLang, participants[4].english, helpers.randomIntFromInterval(5, 10), english[4])
                 ]
             )
             .then((results) => {
-                const isWinner = allResultsAreTrue(results);
+                const isWinner = helpers.allResultsAreTrue(results);
 
                 return isWinner ? {
                     participant: participants[4],
@@ -108,21 +108,19 @@ export default function startRace(participants) {
             })
         ])
         .then((result) => {
-            // console.log('winner', result);
             const { index, participant } = result;
             winner[index].textContent = 'WINNER';
         })
         .catch(() => {
-            // console.log('no winners');
             nowon.classList.remove('hide');
         })
     })    
-
-    function allResultsAreTrue(results) {
+}
+export const helpers = {
+    allResultsAreTrue(results) {
         return results.every(item => item === true);
-    }
-
-    function accCheck(fnc, data, time, element) {
+    },
+    accCheck(fnc, data, time, element) {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
             if (fnc(data)) {
@@ -139,39 +137,39 @@ export default function startRace(participants) {
             element.classList.add('fail-check');
             return false;
         });
-    }
-    function checkAcc(data) {
+    },
+    checkAcc(data) {
         if (data >= 2000) {
             return true;
         } else {
             return false;
         }
-    }
-    function checkAge(data) {
+    },
+    checkAge(data) {
         if (data < 18 || data > 60) {
             return false;
         } else {
             return true;
         }
-    }
-    function checkDocs(data) {
+    },
+    checkDocs(data) {
         if (data === '3') {
             return true; 
         } else {
             return false;
         }
-    }
-    function checkLang(data) {
+    },
+    checkLang(data) {
         if (data === 'B1' || data === 'B2' || data === 'C1') {
             return true; 
         } else {
             return false;
         }
-    }
-    function assignNames(input, data) {
+    },
+    assignNames(input, data) {
         input.textContent = data;
-    }
-    function randomIntFromInterval(min, max) {
+    },
+    randomIntFromInterval(min, max) {
         return (Math.floor(Math.random() * (max - min + 1) + min)) * 1000;
     }
 }

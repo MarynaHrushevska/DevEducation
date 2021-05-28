@@ -29,7 +29,7 @@ export default function addCandidate(participants) {
     race.disabled = true;
     addCandidate.disabled = true;
     let increment = 1;
-    let newParticipant = {};
+    // let newParticipant = {};
     let newPerson;
     let i = 0;
 
@@ -38,9 +38,9 @@ export default function addCandidate(participants) {
         initializationTable.classList.remove('hide');
 
         participants = [];
-        clearData();
+        addHelp.clearData(nameInput, balanceInput, ageInput, documentsInput, englishLevelInput, addCandidate);
         generateAll.disabled = false;
-        blockGenerate(generateButton, false);
+        addHelp.blockGenerate(generateButton, false);
         for (let d of tableData) {
             d.textContent = '';
         }
@@ -53,7 +53,7 @@ export default function addCandidate(participants) {
     })
     for (let a of inputs) {
         a.addEventListener('change', () => {
-            checkInputs();
+            addHelp.checkInputs(nameInput, balanceInput, ageInput, documentsInput, englishLevelInput, addCandidate);
         })
     }
     addCandidate.addEventListener('click', () => {
@@ -61,22 +61,22 @@ export default function addCandidate(participants) {
             addCandidate.disabled = true;
             generateAll.disabled = true;
             race.disabled = false;
-            blockGenerate(generateButton, true);
+            addHelp.blockGenerate(generateButton, true);
         }
-        newPerson = recordCandidate(nameInput.value, balanceInput.value, ageInput.value, documentsInput.value, englishLevelInput.value, addCandidate);
+        newPerson = addHelp.recordCandidate(nameInput.value, participants, balanceInput.value, ageInput.value, documentsInput.value, englishLevelInput.value, addCandidate);
         participants.push(newPerson);
-        fillIn(i++, newPerson);
+        addHelp.fillIn(i++, newPerson, namePerson, balancePerson, agePerson, documentsPerson, englishPerson);
         increment++;
-        clearData();
+        addHelp.clearData(nameInput, balanceInput, ageInput, documentsInput, englishLevelInput, addCandidate);
         winner.forEach((win) => {
             win.textContent = '';
         })
     })
     clear.addEventListener('click', () => {
         participants = [];
-        clearData();
+        addHelp.clearData(nameInput, balanceInput, ageInput, documentsInput, englishLevelInput, addCandidate);
         generateAll.disabled = false;
-        blockGenerate(generateButton, false);
+        addHelp.blockGenerate(generateButton, false);
         for (let d of tableData) {
             d.textContent = '';
         }
@@ -84,17 +84,20 @@ export default function addCandidate(participants) {
     })
     for (let generate of generateButton) {
         generate.addEventListener('click', () => {
-            checkInputs();
+            addHelp.checkInputs(nameInput, balanceInput, ageInput, documentsInput, englishLevelInput, addCandidate);
         })
     }
-    function fillIn(i, person) {
+}
+export const addHelp = {
+    fillIn(i, person, namePerson, balancePerson, agePerson, documentsPerson, englishPerson) {
         namePerson[i].textContent = person.name;
         balancePerson[i].textContent = person.balance;
         agePerson[i].textContent = person.age;
         documentsPerson[i].textContent = person.documents;
         englishPerson[i].textContent = person.english;
-    }
-    function recordCandidate(name, balance, age, docs, english, element) {
+    },
+    recordCandidate(name,participants, balance, age, docs, english, element) {
+        let newParticipant = {};
         if (participants.length === 5) {
             element.disabled = true;
             return;
@@ -108,16 +111,16 @@ export default function addCandidate(participants) {
         }
         element.disabled = true;
         return newParticipant;
-    }
-    function clearData() {
+    },
+    clearData(nameInput, balanceInput, ageInput, documentsInput, englishLevelInput, addCandidate) {
         nameInput.value = ''; 
         balanceInput.value = ''; 
         ageInput.value = ''; 
         documentsInput.value = ''; 
         englishLevelInput.value = '';
         addCandidate.disabled = true;
-    }
-    function checkInputs() {
+    },
+    checkInputs(nameInput, balanceInput, ageInput, documentsInput, englishLevelInput, addCandidate) {
         if (nameInput.value !== '' && 
             balanceInput.value !== '' && 
             ageInput.value !== '' && 
@@ -128,10 +131,10 @@ export default function addCandidate(participants) {
         } else {
             addCandidate.disabled = true;
         }
-    }
-    function blockGenerate(element, status) {
+    },
+    blockGenerate(element, status) {
         for (let btn of element) {
             btn.disabled = status;
         }
     }  
-} 
+}
