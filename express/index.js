@@ -1,15 +1,8 @@
 const express = require('express');
-// const mysql = require('mysql');
 const routes = require('./settings/routes.js');
 
 const port = 5000;
 const app = express();
-// const connection = mysql.createConnection({
-//     host: "localhost",
-//     user: "root",
-//     password: "root",
-//     database: "express"
-// });
 
 app.use(express.json());
 routes(app);
