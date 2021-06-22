@@ -1,0 +1,94 @@
+.light {
+  background-color: #dfe3eb;
+  color: #525bc4;
+}
+.dark {
+  background-color: #282c34;
+  color: white;
+}
+.title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #170621;
+  text-align: center;
+  margin: 30px 0 0;
+  &--dark {
+    color: #fff;
+  }
+}
+.timer {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  overflow: auto;
+  position: fixed;
+  width: 100%;
+  &-inner {
+    margin: 0 auto;
+    text-align: left;
+    width: 600px;
+  }
+  &-input {
+    width: 100px;
+    height: 30px;
+    border: 2px solid #ff3cac;
+    border-radius: 5px;
+    background-color: #dfe3eb;
+    &--dark {
+      background-color: #282c34;
+      color: #fff;
+      &::placeholder {
+        color: #fff;
+      }
+    }
+  }
+}
+.timer-button {
+  margin: auto 20px;
+  padding: 10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  outline: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #fff;
+  &:hover {
+    background-color: #322a92;
+  }
+  &:active {
+    background-color: #dd87e2;
+  }
+  &--light {
+    border: 3px solid #4dbddc;
+    background-color: #784ba0;
+  }
+  &--dark {
+    background-color: #4dbddc;
+    border: 3px solid #cf30c8;
+    color: #000;
+  }
+}
+.timer-progress {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #2bd2ff;
+  border-radius: 10px;
+  justify-self: flex-start;
+  margin-top: 40px;
+  background-color: #ff3cac;
+  background-image: linear-gradient(
+    225deg,
+    #ff3cac 0%,
+    #784ba0 50%,
+    #2b86c5 100%
+  );
+}
+.timer-progress > h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: left;
+  margin: 15px;
+}

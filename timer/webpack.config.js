@@ -1,39 +1,84 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+const pages = [
+    {
+        template: path.resolve(__dirname, 'src/index.html'),
+        filename: 'index.html',
+    },
+];
+const getFileLoader = (regExp) => ({
+    test: regExp,
+    use: ['file-loader'],
+});
+const getStyleLoader = (regExp, additionalLoaders) => {
+    const rules = {
+        test: regExp,
+        use: ['style-loader', 'css-loader'],
+    };
+    if (additionalLoaders && additionalLoaders.length) {
+        additionalLoaders.forEach((loader) => rules.use.push(loader));
+    }
+    return rules;
+};
+const getPath = (url) => path.resolve(__dirname, `src/${url}`);
 
 module.exports = {
     entry: {
-        bundle: path.resolve(__dirname,'src/index.jsx'),
+        bundle: getPath('index.js'),
     },
     module: {
         rules: [
+            getStyleLoader(/\.css$/),
+            getFileLoader(/\.(ttf|woff|eot)$/),
+            getFileLoader(/\.(jpg|jpeg|svg|png)$/),
+            getStyleLoader(/\.s[ac]ss$/, ['sass-loader']),
             {
-                test: /\.(js|jsx)$/,
+                test: /\.js$/,
                 exclude: /node_modules/,
-                use: ["babel-loader"]
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env'],
+                    },
+                },
             },
             {
-                test: /\.(css|scss)$/,
-                use: ["style-loader", "css-loader"],
-            },
-            {
-                test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
-                use: ["file-loader"]
+                test: /\.(jsx|js)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-react','@babel/preset-env'],
+                    },
+                },
             },
         ],
     },
     plugins: [
-        new HTMLWebpackPlugin({
-            template: path.resolve(__dirname,'src/index.html'),
+        ...pages.map((config) => new HTMLWebpackPlugin(config)),
+        new CleanWebpackPlugin(),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, 'public/assets/images'),
+                    to: path.resolve(__dirname, 'dist/assets/images'),
+                },
+            ],
         }),
-        new CleanWebpackPlugin()
     ],
     output: {
         filename: '[name].[contenthash].js',
-        path: path.resolve(__dirname,'dist'),
+        path: path.resolve(__dirname, 'dist'),
+    },
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+        },
     },
     devServer: {
-        port: 1904,
-    }
-}
+        port: 2000,
+    },
+};
