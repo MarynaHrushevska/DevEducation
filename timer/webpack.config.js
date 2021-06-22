@@ -9,14 +9,19 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: ["babel-loader"]
             },
             {
-                test: /\.s[ac]ss$/,
-                use: ['style-loader', 'css-loader']
-            }
-        ]
+                test: /\.(css|scss)$/,
+                use: ["style-loader", "css-loader"],
+            },
+            {
+                test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
+                use: ["file-loader"]
+            },
+        ],
     },
     plugins: [
         new HTMLWebpackPlugin({
