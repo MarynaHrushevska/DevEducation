@@ -26,6 +26,7 @@ const Timer = ({ initialState = false, initialTime = 0, step = 1000 }) => {
       <div className="timer-inner">
         <label>
           <input
+            type="number"
             className={`timer-input timer-input--${theme}`}
             value={valueInput}
             onChange={handleValueInput}

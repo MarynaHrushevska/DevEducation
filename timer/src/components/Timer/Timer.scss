@@ -31,11 +31,12 @@
     width: 600px;
   }
   &-input {
-    width: 100px;
+    width: 110px;
     height: 30px;
     border: 2px solid #ff3cac;
     border-radius: 5px;
     background-color: #dfe3eb;
+    padding: 2px 0;
     &--dark {
       background-color: #282c34;
       color: #fff;
