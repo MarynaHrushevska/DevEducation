@@ -1,34 +1,34 @@
 {
   "name": "converter",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "webpack": "webpack",
-    "start": "webpack serve --open",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
+  "version": "0.1.0",
   "dependencies": {
-    "@babel/core": "^7.14.3",
-    "@babel/node": "^7.14.2",
-    "@babel/plugin-proposal-class-properties": "^7.13.0",
-    "@babel/preset-env": "^7.14.4",
-    "@babel/preset-react": "^7.13.13",
-    "babel-loader": "^8.2.2",
-    "file-loader": "^6.2.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-redux": "^7.2.4",
-    "redux": "^4.1.0",
-    "webpack": "^5.38.1",
-    "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2"
+    "@material-ui/core": "^4.5.0",
+    "convert-units": "^2.3.4",
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1",
+    "react-scripts": "3.1.2"
   },
-  "devDependencies": {
-    "html-webpack-plugin": "^5.3.1",
-    "path": "^0.12.7",
-    "redux-devtools-extension": "^2.13.9"
+  "author": "Marina G. and co",
+  "license": "ISC",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
