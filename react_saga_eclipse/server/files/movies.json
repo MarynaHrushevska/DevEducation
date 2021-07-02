@@ -1,0 +1,18 @@
+[
+    {
+        "id":"16208c09-d10d-4d18-9219-4d8754076391",
+        "title":"Шугалей",
+        "cover":"https://www.kino-teatr.ru/movie/posters/big/3/139913.jpg",
+        "description":"Шугалей"},
+    {
+        "id":"24280da9-79ba-4f67-aac2-3c8343a220dc",
+        "title":"Воздушный бий",
+        "cover":"https://www.film.ru/sites/default/files/styles/thumb_260x400/public/movies/posters/49609095-1432429.jpg",
+        "description":"Воздушный бий"
+    },
+    {
+        "id":"c46e0b47-4651-46c7-a5d4-f3fef1869c28",
+        "title":"Гарри Поттер и Дары Смерти Часть 2",
+        "cover":"https://thumbs.dfs.ivi.ru/storage2/contents/5/b/1a320c6f0240982ad3f287e19afa91.jpg/234x360/","description":"Гарри Поттер и Дары Смерти Часть 2"
+    }
+]
