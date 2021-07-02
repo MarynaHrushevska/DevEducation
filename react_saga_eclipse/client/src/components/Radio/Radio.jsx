@@ -4,16 +4,16 @@ import './Radio.scss';
 
 const Radio = () => {
     const [value, setValue] = useState('light');
-    const [isLight, setIsLight] = useState(true);
+    // const [isLight, setIsLight] = useState(true);
 
     function handleChange () {
-        if (isLight) {
+        if (value === 'light') {
             setValue('dark');
-            setIsLight(false);
+            // setIsLight(false);
             console.log(value);
         } else {
             setValue('light');
-            setIsLight(true);
+            // setIsLight(true);
             console.log(value)
         }
     }

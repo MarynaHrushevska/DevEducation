@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import './Header.scss';
+
 import Button from '../Button';
 import Modal from '../Modal';
 import Radio from '../Radio';
+
+import './Header.scss';
 
 const Header = () => {
     const [modalState, setModalState] = useState(false);
