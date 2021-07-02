@@ -10,7 +10,7 @@
         border: 1px solid black;
         border-radius: 15px;
         min-width: 40%;
-        height: 700px;
+        height: auto;
         background-color: rgb(141, 164, 208);
         display: flex;
         justify-content: flex-start;
@@ -49,7 +49,7 @@
         }
         }
         .content__body{
-            margin-top:150px;
+            margin: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -62,7 +62,10 @@
                 margin: 20px;
                 font-family: 'Play', sans-serif;
                 font-weight: bold;
-                color:#f5da0b;
+                color:rgb(48, 189, 182);
+                &:focus {
+                    border: 4px solid rgb(48, 189, 182);
+                }
             }
         }
     }

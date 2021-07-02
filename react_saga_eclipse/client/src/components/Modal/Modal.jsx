@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useRef } from 'react';
 import propTypes from 'prop-types';
 import Button from '../Button';
 import Input from '../Input';
@@ -11,13 +11,24 @@ const Modal = ({ postMovies, onButtonClick, title: propsTitle, myClassName: prop
         cover: '',
         description: '',
         show: false,
-        inputs: [{ placeholder: 'enter title here', name: 'title' },
-        { placeholder: 'enter cover here', name: 'cover' },
-        { placeholder: 'enter description here', name: 'description' }],
+        inputs: [
+            { placeholder: 'enter title here', name: 'title' },
+            { placeholder: 'enter cover here', name: 'cover' },
+            { placeholder: 'enter description here', name: 'description' }
+        ],
     });
-    useEffect(() => setState({ ...state, show: propsShow }), [propsShow]);
-    const context = useContext(ThemeContext);
+    const inputRef = useRef([]);
 
+    useEffect(() => {
+        setState({ ...state, show: propsShow });
+        setTimeout(() => {
+            if (propsShow && inputRef.current[0]) {
+                inputRef.current[0].focus();
+            }
+        })
+    }, [propsShow]);
+
+    const context = useContext(ThemeContext);
     const handleOnChange = (e) => setState({ ...state, [`${e.target.name}`]: e.target.value });
     const handleClean = () => setState({ ...state, title: '', cover: '', description: '' })
     const handleAddMovie = () => {
@@ -28,7 +39,7 @@ const Modal = ({ postMovies, onButtonClick, title: propsTitle, myClassName: prop
         handleClean();
     }
     const handleBtnHeaderClick = (e) => {
-        if (e.target.classList.contains('modal') || e.target.classList.contains('custom__button')) {
+        if (e.target.classList.contains('modal') || e.target.classList.contains('close-button')) {    
             onButtonClick();
             handleClean();
         }
@@ -38,16 +49,17 @@ const Modal = ({ postMovies, onButtonClick, title: propsTitle, myClassName: prop
             <div className="modal__content" >
                 <div className="content__header">
                     <h3>{propsTitle}</h3>
-                    <Button title="X" onButtonClick={handleBtnHeaderClick} />
+                    <Button title="X" clsNm="close-button" onButtonClick={handleBtnHeaderClick} />
                 </div>
                 <div className="content__body">
-                    {state.inputs.map((input) => (
+                    {state.inputs.map((input, idx) => (
                         <Input
                             key={input.name}
                             name={input.name}
                             value={state[input.name]}
                             placeholder={input.placeholder}
                             onChangeInput={handleOnChange}
+                            ref={el => inputRef.current[idx] = el}
                         />
                     ))}
                     <Button

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './Input.scss';
 
-const Input = ({ placeholder, onChangeInput, value, name, onBlurInput }) => {
+const Input = React.forwardRef(({ placeholder, onChangeInput, value, name, onBlurInput }, ref) => {
     return (
         <input
             type="text"
@@ -11,11 +11,12 @@ const Input = ({ placeholder, onChangeInput, value, name, onBlurInput }) => {
             onChange={onChangeInput}
             value={value}
             name={name}
-            autoFocus
             onBlur={onBlurInput}
+            ref={ref}
         />
     );
-}
+});
+
 Input.propTypes = {
     placeholder: PropTypes.string,
     onChangeInput: PropTypes.func,
