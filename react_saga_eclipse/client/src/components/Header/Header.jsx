@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <header className="header">
             <h1>Movies</h1>
-            <Button onButtonClick={handleBtnClick} title="add Movie" />
+            <Button onButtonClick={handleBtnClick} title="add movie" />
             <Modal myClassName={modalState} onButtonClick={handleBtnClick} title='Add new film in collection' />
         </header>
 

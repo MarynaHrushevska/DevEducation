@@ -48,7 +48,7 @@ const Description = ({ name, id, description, updateMovie }) => {
 Description.propTypes = {
     name: PropTypes.string.isRequired,
     description: PropTypes.string,
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     updateMovie: PropTypes.func.isRequired
 }
 
