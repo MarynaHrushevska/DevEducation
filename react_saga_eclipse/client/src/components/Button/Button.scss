@@ -14,9 +14,9 @@ button {
         transition-duration: .5s;
     }
     &:disabled{
-         background-color: #f7eea5;
+         background-color: rgb(247,202,204);
          &:hover{
-             background-color: #f7eea5;
+             background-color: rgb(247,202,204);
              cursor:none;
          }
     }
