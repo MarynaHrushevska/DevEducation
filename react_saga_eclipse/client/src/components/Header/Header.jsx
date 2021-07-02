@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Header.scss';
 import Button from '../Button';
 import Modal from '../Modal';
+import Radio from '../Radio';
 
 const Header = () => {
     const [modalState, setModalState] = useState(false);
@@ -9,6 +10,9 @@ const Header = () => {
     return (
         <header className="header">
             <h1>Movies</h1>
+            <div className="radio">
+                <Radio/>
+            </div>
             <Button onButtonClick={handleBtnClick} title="add movie" />
             <Modal myClassName={modalState} onButtonClick={handleBtnClick} title='add new film' />
         </header>
