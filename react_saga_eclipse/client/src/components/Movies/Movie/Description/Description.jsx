@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { NotificationManager } from 'react-notifications';
 import PropTypes from 'prop-types';
+import { NotificationManager } from 'react-notifications';
 import Input from '../../../Input';
 import './Description.scss';
-
-
 
 const Description = ({ name, id, description, updateMovie }) => {
     const [state, setState] = useState({
@@ -42,7 +40,6 @@ const Description = ({ name, id, description, updateMovie }) => {
             }
         </>
     );
-
 }
 
 Description.propTypes = {

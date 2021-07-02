@@ -44,7 +44,6 @@ const Cover = ({ name, id, cover, updateMovie }) => {
             }
         </>
     );
-
 }
 
 Cover.propTypes = {

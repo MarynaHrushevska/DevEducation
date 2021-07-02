@@ -8,16 +8,15 @@ button {
     justify-self: center;
     align-self: center;
     cursor: pointer;
-    transition-duration: .5s;
-    &:hover {
-        background-color: #f7cacc;
-        transition-duration: .5s;
-    }
     &:disabled{
-         background-color: rgb(247,202,204);
-         &:hover{
-             background-color: rgb(247,202,204);
-             cursor:none;
-         }
+        background-color: rgb(247,202,204);
+        cursor: none;
+    }
+}
+
+.theme-dark {
+    button {
+        background: rgb(76, 11, 14);
+        color: rgb(206, 206, 206);
     }
 }

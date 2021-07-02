@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Title from './Title';
 import Cover from './Cover';
 import Description from './Description';
+import ThemeContext from '../../../context';
 import './Movie.scss';
 
 const Movie = ({ id }) => {
+    const context = useContext(ThemeContext);
     return (
-        <div className="movie" >
+        <div className={`movie theme-${context.value}`} >
             <Title name='title' id={id} />
             <Cover name="cover" id={id} />
             <Description name="description" id={id} />

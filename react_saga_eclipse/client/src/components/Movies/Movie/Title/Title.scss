@@ -32,14 +32,25 @@
         right: 10px;
         padding-right: 10px;
         width: 50px;
-        transition-duration: .5s;
         &:hover{
             font-weight: bold;
-            transition-duration: .5s;
             font-size: 20px;
             right:15px;
             color: #1B264F;
 font-family: 'Play', sans-serif;
+        }
+    }
+}
+
+#root.theme-dark {
+        background: rgb(43, 64, 105);
+    }
+
+.app.theme-dark {
+    .movie__header {
+        background: rgb(76, 11, 14);
+        input {
+            background: rgb(76, 11, 14);
         }
     }
 }

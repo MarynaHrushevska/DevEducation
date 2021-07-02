@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import propTypes from 'prop-types';
-import './Modal.scss';
 import Button from '../Button';
 import Input from '../Input';
+import ThemeContext from '../../context';
+import './Modal.scss';
 
 const Modal = ({ postMovies, onButtonClick, title: propsTitle, myClassName: propsShow }) => {
     const [state, setState] = useState({
@@ -15,6 +16,7 @@ const Modal = ({ postMovies, onButtonClick, title: propsTitle, myClassName: prop
         { placeholder: 'enter description here', name: 'description' }],
     });
     useEffect(() => setState({ ...state, show: propsShow }), [propsShow]);
+    const context = useContext(ThemeContext);
 
     const handleOnChange = (e) => setState({ ...state, [`${e.target.name}`]: e.target.value });
     const handleClean = () => setState({ ...state, title: '', cover: '', description: '' })
@@ -32,7 +34,7 @@ const Modal = ({ postMovies, onButtonClick, title: propsTitle, myClassName: prop
         }
     }
     return (
-        <div className={state.show ? 'modal' : 'modal hide'} onClick={handleBtnHeaderClick}>
+        <div className={state.show ? `modal theme-${context.value}` : 'modal hide'} onClick={handleBtnHeaderClick}>
             <div className="modal__content" >
                 <div className="content__header">
                     <h3>{propsTitle}</h3>

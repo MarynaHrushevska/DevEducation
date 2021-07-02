@@ -41,10 +41,8 @@
               right: 30px;
               padding-right: 10px;
               width: 50px;
-              transition-duration: .5s;
               &:hover{
                 font-weight: bold;
-                transition-duration: .5s;
                 font-size: 30px;
                 color: #1B264F;
             }
@@ -71,4 +69,15 @@
 }
 .hide {
     display: none;
+}
+
+.app.theme-dark {
+    .modal {
+        &__content {
+            background: rgb(43, 64, 105);
+            .content__header {
+                background: rgb(76, 11, 14);
+            }
+        }
+    }
 }

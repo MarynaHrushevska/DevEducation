@@ -10,8 +10,7 @@
     flex-direction: column;
     border: 1px solid black;
     border-radius: 10px;
-    transition-duration: .5s;
-    color: white;
+    color: rgb(75, 75, 75);
     img{
         margin-top: -10px;
         height: 70%;
@@ -20,8 +19,6 @@
     h5, p {
         width: 100%;
         text-align: center;
-
-
     }
     p {
            font-size: 20px;
@@ -51,5 +48,11 @@
                 font-weight: bold;
             }
         }
+    }
+}
+.app.theme-dark {
+    .movie {
+        background: #333;
+        color: #ddd
     }
 }

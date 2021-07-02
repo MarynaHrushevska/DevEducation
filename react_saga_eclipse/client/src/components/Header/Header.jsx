@@ -9,6 +9,7 @@ import './Header.scss';
 const Header = () => {
     const [modalState, setModalState] = useState(false);
     const handleBtnClick = () => setModalState(!modalState);
+
     return (
         <header className="header">
             <h1>Movies</h1>

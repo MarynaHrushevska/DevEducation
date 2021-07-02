@@ -20,11 +20,16 @@
         font-weight: bold;
         &:hover{
             color: #fff;
-            background-color: #f7cacc;
         }
     }
 }
 
 .radio {
     display: flex;
+}
+
+.app.theme-dark {
+    .header {
+        background: rgb(76, 11, 14);
+    }
 }

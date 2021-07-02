@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
+import { NotificationManager } from 'react-notifications';
 import Button from '../../../Button';
 import Input from '../../../Input';
+import ThemeContext from '../../../../context';
 import './Title.scss';
-import { NotificationManager } from 'react-notifications';
-
 
 const Title = ({ name, id, title, updateMovie, deleteMovie }) => {
     const [state, setState] = useState({
@@ -12,6 +12,7 @@ const Title = ({ name, id, title, updateMovie, deleteMovie }) => {
         changeParam: 'title',
         newData: '',
     });
+    const context = useContext(ThemeContext);
     const handleOnChange = (e) => setState({ ...state, newData: e.target.value });
     const handleDeleteItem = () => deleteMovie(id);
     const handleOnDoubleClick = () => setState((state) => ({ ...state, isWaitForChange: !state.isWaitForChange }));
@@ -26,7 +27,7 @@ const Title = ({ name, id, title, updateMovie, deleteMovie }) => {
     }
 
     return (
-        <div className="movie__header" >
+        <div className={`movie__header theme-${context.value}`} >
             {
                 state.isWaitForChange ? (
                     <Input
